@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SlideUpRoundedView" customModule="Drinky" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2mc-Di-xTu">
+                    <rect key="frame" x="5" y="40" width="404" height="100"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o47-q2-NJv">
+                            <rect key="frame" x="0.0" y="0.0" width="129.5" height="100"/>
+                            <state key="normal" image="glassWater"/>
+                            <connections>
+                                <action selector="smallGlassTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="2C7-ob-EiF"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8L-wn-JCa">
+                            <rect key="frame" x="137.5" y="0.0" width="129" height="100"/>
+                            <state key="normal" image="glassWater"/>
+                            <connections>
+                                <action selector="mediumGlassTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZM6-az-pRG"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWh-VG-SzX">
+                            <rect key="frame" x="274.5" y="0.0" width="129.5" height="100"/>
+                            <state key="normal" image="glassWater"/>
+                            <connections>
+                                <action selector="bigGlassTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="IB0-vF-KTJ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="2a0-Ge-9Jf"/>
+                    </constraints>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIi-JV-NTb">
+                    <rect key="frame" x="384" y="5" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="Ojs-BJ-nxe"/>
+                        <constraint firstAttribute="width" constant="25" id="wco-c5-hSV"/>
+                    </constraints>
+                    <state key="normal" image="closeButton"/>
+                    <connections>
+                        <action selector="closeButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="DB1-4U-cdY"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="2mc-Di-xTu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="7lN-en-t2Z"/>
+                <constraint firstItem="2mc-Di-xTu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="INP-cy-IYc"/>
+                <constraint firstAttribute="trailing" secondItem="hIi-JV-NTb" secondAttribute="trailing" constant="5" id="LVY-2b-YuA"/>
+                <constraint firstItem="hIi-JV-NTb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="fVD-Fr-Dux"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="2mc-Di-xTu" secondAttribute="trailing" constant="5" id="wps-7X-o2C"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="NYM-uR-rQ1" appends="YES" id="mok-Vu-oKD"/>
+            </connections>
+            <point key="canvasLocation" x="-236.23188405797103" y="131.25"/>
+        </view>
+        <swipeGestureRecognizer direction="down" id="NYM-uR-rQ1">
+            <connections>
+                <action selector="swipeDownOnSlideUpRoundedView:" destination="iN0-l3-epB" id="tiv-qn-zzM"/>
+            </connections>
+        </swipeGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="closeButton" width="512" height="512"/>
+        <image name="glassWater" width="300" height="300"/>
+    </resources>
+</document>
