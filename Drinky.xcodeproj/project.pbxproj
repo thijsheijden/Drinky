@@ -8,13 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		6A596577B7CA3DD95825BB80 /* Pods_Drinky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492137B3FC136F7466D360BB /* Pods_Drinky.framework */; };
-		764AD2D2226BA72700F9A750 /* writeDataToCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764AD2D1226BA72700F9A750 /* writeDataToCoreData.swift */; };
 		769461B7226DC386001C254A /* AppVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461B6226DC386001C254A /* AppVariables.swift */; };
 		769461BA226DC557001C254A /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461B9226DC557001C254A /* DateExtension.swift */; };
 		769461BC226DC73B001C254A /* retrieveDayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461BB226DC73B001C254A /* retrieveDayEntity.swift */; };
 		76B20CE6226B27D500AC406A /* SlideUpRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B20CE5226B27D500AC406A /* SlideUpRoundedView.swift */; };
 		76B20CE8226B281900AC406A /* SlideUpRoundedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76B20CE7226B281900AC406A /* SlideUpRoundedView.xib */; };
 		76B20CEA226B285500AC406A /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B20CE9226B285500AC406A /* RoundedShadowView.swift */; };
+		76C1DA8F226F4BD1004A957C /* createNewDayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA8E226F4BD1004A957C /* createNewDayEntity.swift */; };
+		76C1DA91226F4CF7004A957C /* checkIfDayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA90226F4CF7004A957C /* checkIfDayEntity.swift */; };
+		76C1DA93226F4E4A004A957C /* PresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA92226F4E4A004A957C /* PresenterProtocol.swift */; };
+		76C1DA96226F5086004A957C /* addDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA95226F5086004A957C /* addDrink.swift */; };
+		76C1DA98226F6231004A957C /* undoDrinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA97226F6231004A957C /* undoDrinks.swift */; };
+		76C1DA9A226F6989004A957C /* calculatePercentageOfGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA99226F6989004A957C /* calculatePercentageOfGoal.swift */; };
 		76F3C464226A27B200E25C34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F3C463226A27B200E25C34 /* AppDelegate.swift */; };
 		76F3C466226A27B200E25C34 /* CurrentAmountDrankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F3C465226A27B200E25C34 /* CurrentAmountDrankViewController.swift */; };
 		76F3C469226A27B200E25C34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76F3C467226A27B200E25C34 /* Main.storyboard */; };
@@ -52,13 +57,18 @@
 		3FDCB15E84D6827365481ACA /* Pods_DrinkyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DrinkyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		492137B3FC136F7466D360BB /* Pods_Drinky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Drinky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F65162633A9E3D7C88B14C /* Pods-DrinkyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrinkyUITests.debug.xcconfig"; path = "Target Support Files/Pods-DrinkyUITests/Pods-DrinkyUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		764AD2D1226BA72700F9A750 /* writeDataToCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = writeDataToCoreData.swift; sourceTree = "<group>"; };
 		769461B6226DC386001C254A /* AppVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVariables.swift; sourceTree = "<group>"; };
 		769461B9226DC557001C254A /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		769461BB226DC73B001C254A /* retrieveDayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = retrieveDayEntity.swift; sourceTree = "<group>"; };
 		76B20CE5226B27D500AC406A /* SlideUpRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpRoundedView.swift; sourceTree = "<group>"; };
 		76B20CE7226B281900AC406A /* SlideUpRoundedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideUpRoundedView.xib; sourceTree = "<group>"; };
 		76B20CE9226B285500AC406A /* RoundedShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
+		76C1DA8E226F4BD1004A957C /* createNewDayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createNewDayEntity.swift; sourceTree = "<group>"; };
+		76C1DA90226F4CF7004A957C /* checkIfDayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkIfDayEntity.swift; sourceTree = "<group>"; };
+		76C1DA92226F4E4A004A957C /* PresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterProtocol.swift; sourceTree = "<group>"; };
+		76C1DA95226F5086004A957C /* addDrink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addDrink.swift; sourceTree = "<group>"; };
+		76C1DA97226F6231004A957C /* undoDrinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = undoDrinks.swift; sourceTree = "<group>"; };
+		76C1DA99226F6989004A957C /* calculatePercentageOfGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculatePercentageOfGoal.swift; sourceTree = "<group>"; };
 		76F3C460226A27B200E25C34 /* Drinky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drinky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F3C463226A27B200E25C34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76F3C465226A27B200E25C34 /* CurrentAmountDrankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAmountDrankViewController.swift; sourceTree = "<group>"; };
@@ -120,8 +130,12 @@
 		769461B5226DC35C001C254A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				764AD2D1226BA72700F9A750 /* writeDataToCoreData.swift */,
 				769461BB226DC73B001C254A /* retrieveDayEntity.swift */,
+				76C1DA8E226F4BD1004A957C /* createNewDayEntity.swift */,
+				76C1DA90226F4CF7004A957C /* checkIfDayEntity.swift */,
+				76C1DA95226F5086004A957C /* addDrink.swift */,
+				76C1DA97226F6231004A957C /* undoDrinks.swift */,
+				76C1DA99226F6989004A957C /* calculatePercentageOfGoal.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -221,6 +235,7 @@
 		76F3C499226A287900E25C34 /* Base Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				76C1DA92226F4E4A004A957C /* PresenterProtocol.swift */,
 			);
 			path = "Base Protocols";
 			sourceTree = "<group>";
@@ -484,14 +499,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				76F3C466226A27B200E25C34 /* CurrentAmountDrankViewController.swift in Sources */,
-				764AD2D2226BA72700F9A750 /* writeDataToCoreData.swift in Sources */,
+				76C1DA96226F5086004A957C /* addDrink.swift in Sources */,
 				76F3C46C226A27B200E25C34 /* Drinky.xcdatamodeld in Sources */,
 				769461BC226DC73B001C254A /* retrieveDayEntity.swift in Sources */,
+				76C1DA8F226F4BD1004A957C /* createNewDayEntity.swift in Sources */,
+				76C1DA98226F6231004A957C /* undoDrinks.swift in Sources */,
+				76C1DA91226F4CF7004A957C /* checkIfDayEntity.swift in Sources */,
 				76B20CEA226B285500AC406A /* RoundedShadowView.swift in Sources */,
 				769461BA226DC557001C254A /* DateExtension.swift in Sources */,
 				76B20CE6226B27D500AC406A /* SlideUpRoundedView.swift in Sources */,
 				76F3C464226A27B200E25C34 /* AppDelegate.swift in Sources */,
+				76C1DA93226F4E4A004A957C /* PresenterProtocol.swift in Sources */,
 				76F3C498226A283500E25C34 /* CurrentAmountDrankPresenter.swift in Sources */,
+				76C1DA9A226F6989004A957C /* calculatePercentageOfGoal.swift in Sources */,
 				769461B7226DC386001C254A /* AppVariables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

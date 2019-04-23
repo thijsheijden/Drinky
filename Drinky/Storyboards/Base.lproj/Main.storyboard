@@ -19,20 +19,21 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oDU-2Y-4Ga" customClass="BAFluidView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 mL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NA0-nh-68j">
-                                        <rect key="frame" x="130" y="100" width="154.5" height="86"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="72"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="NA0-nh-68j" firstAttribute="top" secondItem="oDU-2Y-4Ga" secondAttribute="top" constant="100" id="7hB-mr-MlX"/>
-                                    <constraint firstItem="NA0-nh-68j" firstAttribute="centerX" secondItem="oDU-2Y-4Ga" secondAttribute="centerX" id="EvX-oy-hbH"/>
-                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fh-Z4-INq">
+                                <rect key="frame" x="188.5" y="255" width="37" height="30"/>
+                                <state key="normal" title="Undo"/>
+                                <connections>
+                                    <action selector="undoDrinkButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QOz-vL-1zl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 mL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NA0-nh-68j">
+                                <rect key="frame" x="130" y="144" width="154.5" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="72"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8H-AI-Xch">
                                 <rect key="frame" x="175" y="716" width="64" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -50,7 +51,11 @@
                             <constraint firstItem="oDU-2Y-4Ga" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="90X-Fh-xMA"/>
                             <constraint firstAttribute="bottom" secondItem="oDU-2Y-4Ga" secondAttribute="bottom" id="JdW-Du-Rr6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d8H-AI-Xch" secondAttribute="bottom" constant="100" id="Maf-1k-xFR"/>
+                            <constraint firstItem="NA0-nh-68j" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="W2B-II-DEG"/>
+                            <constraint firstItem="3fh-Z4-INq" firstAttribute="top" secondItem="NA0-nh-68j" secondAttribute="bottom" constant="25" id="Ywn-ov-akM"/>
+                            <constraint firstItem="NA0-nh-68j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p18-67-Eme"/>
                             <constraint firstItem="oDU-2Y-4Ga" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qBK-ui-CD5"/>
+                            <constraint firstItem="3fh-Z4-INq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x2O-L5-rI6"/>
                             <constraint firstItem="d8H-AI-Xch" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xcv-f5-z7a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

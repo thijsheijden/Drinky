@@ -10,7 +10,13 @@ import UIKit
 import BAFluidView
 import CoreMotion
 
-class CurrentAmountDrankViewController: UIViewController {
+protocol CurrentAmountDrankViewControllerProtocol {
+    func setupView()
+    func setupMotion()
+    func fillDrinkView(ml: Int)
+}
+
+class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankViewControllerProtocol {
 
     // IBOutlets
     @IBOutlet weak var amountDrankView: BAFluidView!
@@ -18,6 +24,7 @@ class CurrentAmountDrankViewController: UIViewController {
     // variables and constants
     var slideUpView: SlideUpRoundedView!
     var motionManager = CMMotionManager()
+    var presenter: CurrentAmountDrankPresenter!
     
     // constants to keep track of the minimal y of the screen
     var screenMinY: CGFloat!
@@ -28,8 +35,8 @@ class CurrentAmountDrankViewController: UIViewController {
         
         screenMinY = self.view.frame.maxY
         
-        setupMotion()
-        setupView()
+        presenter = CurrentAmountDrankPresenter(view: self)
+        presenter.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,7 +58,6 @@ class CurrentAmountDrankViewController: UIViewController {
     }
     
     func setupLiquidBackgroundView(fillTo: NSNumber) {
-        print(fillTo)
         amountDrankView.fillColor = UIColor(hex: 0x397ebe)
         amountDrankView.fillRepeatCount = 1
         amountDrankView.fillAutoReverse = false
@@ -85,17 +91,24 @@ class CurrentAmountDrankViewController: UIViewController {
             removeSlideUpView()
         } else {
             setupSlideUpView()
-            amountDrankView.fill(to: 0.6)
         }
+    }
+    
+    @IBAction func undoDrinkButtonPressed(_ sender: Any) {
+        presenter.undoLastDrink()
+    }
+    
+    func fillDrinkView(ml: Int) {
+        let mililiters = Float(ml) / 100.0
+        amountDrankView.fill(to: mililiters as NSNumber)
     }
     
 }
 
 extension CurrentAmountDrankViewController: WaterGlassTappedDelegate {
     func waterGlassTapped(mililiters: Int) {
-        print(mililiters)
-        retrieveDayEntity()
         removeSlideUpView()
+        presenter.addDrinkToData(ml: mililiters)
     }
     
     func closeButtonTapped() {

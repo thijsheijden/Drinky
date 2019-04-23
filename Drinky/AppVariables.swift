@@ -14,4 +14,6 @@ class AppVariables {
     // the app's appdelegate
     static let appDelegate = UIApplication.shared.delegate as? AppDelegate
     
+    static var goal: Float = 2500
+    
 }
