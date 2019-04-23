@@ -13,7 +13,7 @@ import CoreMotion
 protocol CurrentAmountDrankViewControllerProtocol {
     func setupView()
     func setupMotion()
-    func fillDrinkView(ml: Int)
+    func fillDrinkView(ml: Double)
 }
 
 class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankViewControllerProtocol {
@@ -98,8 +98,8 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
         presenter.undoLastDrink()
     }
     
-    func fillDrinkView(ml: Int) {
-        let mililiters = Float(ml) / 100.0
+    func fillDrinkView(ml: Double) {
+        let mililiters = ml / 100
         amountDrankView.fill(to: mililiters as NSNumber)
     }
     

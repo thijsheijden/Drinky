@@ -2,12 +2,12 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Day" representedClassName="Day" syncable="YES" codeGenerationType="class">
         <attribute name="date" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="mlDrank" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="percentageGoal" optional="YES" attributeType="Integer 16" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="mlDrank" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="percentageGoal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <relationship name="drinkTaken" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Drink" inverseName="dayDrank" inverseEntity="Drink" syncable="YES"/>
     </entity>
     <entity name="Drink" representedClassName="Drink" syncable="YES" codeGenerationType="class">
-        <attribute name="mililiters" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="mililiters" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="time" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="dayDrank" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Day" inverseName="drinkTaken" inverseEntity="Day" syncable="YES"/>
     </entity>

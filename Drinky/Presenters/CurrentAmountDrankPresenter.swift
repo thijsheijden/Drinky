@@ -28,13 +28,13 @@ class CurrentAmountDrankPresenter: PresenterProtocol {
     }
     
     // method to fill the drink view on the screen
-    func fillDrinkView(to: Int) {
+    func fillDrinkView(to: Double) {
         view.fillDrinkView(ml: to)
     }
     
     // method which gets called when a glass is tapped, adds a drink to the storage
     func addDrinkToData(ml: Int) {
-        addDrink(mililiters: Int16(ml)) { percentageGoal -> Void in
+        addDrink(mililiters: Double(ml)) { percentageGoal -> Void in
             self.fillDrinkView(to: percentageGoal)
         }
     }
@@ -42,6 +42,6 @@ class CurrentAmountDrankPresenter: PresenterProtocol {
     // method which undoes the last taken drink
     func undoLastDrink() {
         let percentageGoal = undoDrinks()
-        view.fillDrinkView(ml: Int("\(percentageGoal)") ?? 0)
+        view.fillDrinkView(ml: percentageGoal)
     }
 }

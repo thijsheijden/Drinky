@@ -11,15 +11,13 @@ import CoreData
 
 func retrieveDayEntity() -> Day? {
     
-    let managedContext = AppVariables.appDelegate?.persistentContainer.viewContext
-    
     let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Day")
     fetchRequest.fetchLimit = 1
     fetchRequest.predicate = NSPredicate(format: "date == %@", argumentArray: [Date().format(format: "dd-MM-yyyy")])
     
     do {
         
-        let result = try managedContext?.fetch(fetchRequest)
+        let result = try CoreDataManager.shared.context.fetch(fetchRequest)
         for data in result as! [NSManagedObject] {
             return data as? Day
         }

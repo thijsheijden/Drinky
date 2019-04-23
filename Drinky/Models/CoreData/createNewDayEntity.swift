@@ -15,18 +15,11 @@ func createNewDayEntity() {
     // get current date
     let date = Date().format(format: "dd-MM-yyyy")
     
-    // create the context
-    guard let managedContext = AppVariables.appDelegate?.persistentContainer.viewContext else { return }
-    
     // create a new day entity object
-    let day = Day(context: managedContext)
+    let day = Day(context: CoreDataManager.shared.context)
     day.date = date
     day.mlDrank = 0
     day.percentageGoal = 0
     
-    do {
-        try managedContext.save()
-    } catch {
-        print("Could not create new day entity in database.")
-    }
+    CoreDataManager.shared.save()
 }

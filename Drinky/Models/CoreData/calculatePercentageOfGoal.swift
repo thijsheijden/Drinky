@@ -9,6 +9,6 @@
 import Foundation
 
 // method which calculates the percentage of the goal the user has achieved
-func calculatePercentageOfGoal(mililiters: Int16, mililitersInDb: Int16) -> Int {
-    return Int(((Float(mililitersInDb ?? 0) + Float(mililiters)) / AppVariables.goal) * 100)
+func calculatePercentageOfGoal(mililiters: Double, mililitersInDb: Double) -> Double {
+    return Double(((mililitersInDb + mililiters) / AppVariables.goal) * 100)
 }

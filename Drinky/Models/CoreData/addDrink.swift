@@ -10,16 +10,13 @@ import Foundation
 import CoreData
 
 // method which adds the drink taken to the database
-func addDrink(mililiters: Int16, completion: @escaping (Int) -> Void) {
+func addDrink(mililiters: Double, completion: @escaping (Double) -> Void) {
     
     // get current time as date object
     let time = Date().format(format: "hh-mm-ss")
     
-    // create the context
-    guard let managedContext = AppVariables.appDelegate?.persistentContainer.viewContext else { return }
-    
     // create a drink entity object
-    let drink = Drink(context: managedContext)
+    let drink = Drink(context: CoreDataManager.shared.context)
     drink.time = time
     drink.mililiters = mililiters
     
@@ -27,23 +24,18 @@ func addDrink(mililiters: Int16, completion: @escaping (Int) -> Void) {
     let day = retrieveDayEntity()
     
     // update the day data
-    let mlDrank = day?.value(forKey: "mlDrank") as? Int16
-    let percentageGoal = calculatePercentageOfGoal(mililiters: mililiters, mililitersInDb: mlDrank ?? 0)
+    let mlDrank = day?.mlDrank
+    
+    let percentageGoal = calculatePercentageOfGoal(mililiters: mililiters, mililitersInDb: mlDrank ?? 0.0)
     
     print("Added drink percentage of goal: \(percentageGoal)")
     
-    day?.setValuesForKeys(["mlDrank": (mlDrank ?? 0) + mililiters, "percentageGoal": percentageGoal])
+    day?.mlDrank += mililiters
+    day?.percentageGoal = percentageGoal
     
     // set the day this drink was drank to the current day entity
-    drink.dayDrank = day
+    day?.addToDrinkTaken(drink)
     
-    do {
-        // try and save the changed data
-        try managedContext.save()
-        
-        // if completed call the completion handler
-        completion(percentageGoal)
-    } catch {
-        print("Could not create new day entity in database.")
-    }
+    CoreDataManager.shared.save()
+    completion(percentageGoal)
 }

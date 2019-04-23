@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 // this method undoes the last drink taken
-func undoDrinks() -> Int16? {
+func undoDrinks() -> Double {
     
     var lastInsertedTime: Date!
     var toDeleteDrink: Drink!
@@ -20,6 +20,8 @@ func undoDrinks() -> Int16? {
     
     // removing the last added drink from the day object
     guard let drinks = day?.drinkTaken else { return 0 }
+    
+    print(drinks.count)
     
     if drinks.count > 0 {
         for drinkTaken in drinks {
@@ -40,17 +42,21 @@ func undoDrinks() -> Int16? {
         }
 
         day?.removeFromDrinkTaken(toDeleteDrink)
-        
-        day?.setValue(0, forKey: "percentageGoal")
+        CoreDataManager.shared.context.delete(toDeleteDrink)
         
         // calculate the new percentageGoal and pass it back
         let percentageGoal = calculatePercentageOfGoal(mililiters: 0, mililitersInDb: day?.mlDrank ?? 0 - toDeleteDrink.mililiters)
-//        day?.setValuesForKeys(["mlDrank": day?.mlDrank ?? 0 - toDeleteDrink.mililiters, "percentageGoal": 0])
-//        print("Undo curent percentage goal: \(day?.percentageGoal), mlDrank: \(day?.mlDrank)")
+                
+        day?.mlDrank -= toDeleteDrink.mililiters
+        day?.percentageGoal = percentageGoal
         
-        return Int16(percentageGoal)
+        print("Undo curent percentage goal: \(day?.percentageGoal), mlDrank: \(day?.mlDrank)")
+        
+        CoreDataManager.shared.save()
+        
+        return percentageGoal
 
     }
     
-    return 0
+    return 0.0
 }
