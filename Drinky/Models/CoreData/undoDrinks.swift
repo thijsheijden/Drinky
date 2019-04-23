@@ -36,6 +36,7 @@ func undoDrinks() -> Double {
                 if drink.time! >= lastInsertedTime! {
                     lastInsertedTime = drink.time
                     toDeleteDrink = drink
+                    print(toDeleteDrink.mililiters)
                 }
                 
             }
@@ -45,8 +46,8 @@ func undoDrinks() -> Double {
         CoreDataManager.shared.context.delete(toDeleteDrink)
         
         // calculate the new percentageGoal and pass it back
-        let percentageGoal = calculatePercentageOfGoal(mililiters: 0, mililitersInDb: day?.mlDrank ?? 0 - toDeleteDrink.mililiters)
-                
+        let percentageGoal = calculatePercentageOfGoal(mililiters: -(toDeleteDrink.mililiters), mililitersInDb: day?.mlDrank ?? 0.0)
+        
         day?.mlDrank -= toDeleteDrink.mililiters
         day?.percentageGoal = percentageGoal
         
