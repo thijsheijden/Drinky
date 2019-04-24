@@ -57,17 +57,18 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
         }
     }
     
-    func setupLiquidBackgroundView(fillTo: NSNumber) {
+    // setting up the liquid animated background view
+    func setupLiquidBackgroundView() {
         amountDrankView.fillColor = UIColor(hex: 0x397ebe)
         amountDrankView.fillRepeatCount = 1
         amountDrankView.fillAutoReverse = false
-        amountDrankView.fill(to: fillTo)
+        amountDrankView.fill(to: (retrieveDayEntity()?.percentageGoal ?? 0.0) / 100 as NSNumber?)
         amountDrankView.startAnimation()
     }
     
-    // setting up the view based on the results
+    // setting up all the views on initial load of view controller
     func setupView() {
-        setupLiquidBackgroundView(fillTo: 0.4)
+        setupLiquidBackgroundView()
     }
     
     func setupSlideUpView() {
