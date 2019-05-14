@@ -21,27 +21,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fh-Z4-INq">
-                                <rect key="frame" x="188.5" y="394" width="37" height="30"/>
-                                <state key="normal" title="Undo"/>
-                                <connections>
-                                    <action selector="undoDrinkButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QOz-vL-1zl"/>
-                                </connections>
-                            </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ico-uh-UjI">
-                                <rect key="frame" x="0.0" y="94" width="414" height="250"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="aV9-RB-Uma"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GRn-ob-ldo">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8H-AI-Xch">
                                 <rect key="frame" x="175" y="716" width="64" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -52,25 +31,53 @@
                                     <action selector="drinkButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fY-FE-QUv"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Xe-5F-HCo">
+                                <rect key="frame" x="15" y="144" width="384" height="104.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 mL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxH-36-IIk">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="76.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="64"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2500 mL to go" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jW2-d5-buE">
+                                        <rect key="frame" x="0.0" y="76.5" width="384" height="28"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fh-Z4-INq">
+                                <rect key="frame" x="168.5" y="777" width="77" height="30"/>
+                                <state key="normal" title="Undo Drink">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="undoDrinkButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QOz-vL-1zl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="9Xe-5F-HCo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="15j-kY-Kot"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oDU-2Y-4Ga" secondAttribute="trailing" id="1hL-jo-C4m"/>
                             <constraint firstItem="oDU-2Y-4Ga" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="90X-Fh-xMA"/>
                             <constraint firstAttribute="bottom" secondItem="oDU-2Y-4Ga" secondAttribute="bottom" id="JdW-Du-Rr6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d8H-AI-Xch" secondAttribute="bottom" constant="100" id="Maf-1k-xFR"/>
-                            <constraint firstItem="ico-uh-UjI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="PVp-RG-h0p"/>
-                            <constraint firstItem="ico-uh-UjI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VRi-iU-dZd"/>
-                            <constraint firstItem="3fh-Z4-INq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WpO-RM-hK1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ico-uh-UjI" secondAttribute="trailing" id="ZJY-f4-PVe"/>
-                            <constraint firstItem="3fh-Z4-INq" firstAttribute="top" secondItem="ico-uh-UjI" secondAttribute="bottom" constant="50" id="n8A-io-EiR"/>
+                            <constraint firstItem="3fh-Z4-INq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NEI-Nx-Kml"/>
+                            <constraint firstItem="3fh-Z4-INq" firstAttribute="top" secondItem="d8H-AI-Xch" secondAttribute="bottom" constant="15" id="YVz-o4-XEC"/>
+                            <constraint firstItem="9Xe-5F-HCo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="pdn-xy-8Jh"/>
                             <constraint firstItem="oDU-2Y-4Ga" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qBK-ui-CD5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Xe-5F-HCo" secondAttribute="trailing" constant="15" id="r3w-YK-DSo"/>
                             <constraint firstItem="d8H-AI-Xch" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xcv-f5-z7a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="amountDrankLabel" destination="sxH-36-IIk" id="pPc-UL-NRd"/>
                         <outlet property="amountDrankView" destination="oDU-2Y-4Ga" id="snD-tI-psP"/>
+                        <outlet property="amountLeftToDrinkLabel" destination="jW2-d5-buE" id="c7R-JP-hg4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

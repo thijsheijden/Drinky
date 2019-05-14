@@ -14,6 +14,7 @@
 		76B20CE6226B27D500AC406A /* SlideUpRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B20CE5226B27D500AC406A /* SlideUpRoundedView.swift */; };
 		76B20CE8226B281900AC406A /* SlideUpRoundedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76B20CE7226B281900AC406A /* SlideUpRoundedView.xib */; };
 		76B20CEA226B285500AC406A /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B20CE9226B285500AC406A /* RoundedShadowView.swift */; };
+		76BB3B7D228B07CE00A05934 /* evaluateAmountDrankAtTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB3B7C228B07CE00A05934 /* evaluateAmountDrankAtTime.swift */; };
 		76C1DA8F226F4BD1004A957C /* createNewDayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA8E226F4BD1004A957C /* createNewDayEntity.swift */; };
 		76C1DA91226F4CF7004A957C /* checkIfDayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA90226F4CF7004A957C /* checkIfDayEntity.swift */; };
 		76C1DA93226F4E4A004A957C /* PresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA92226F4E4A004A957C /* PresenterProtocol.swift */; };
@@ -21,8 +22,6 @@
 		76C1DA98226F6231004A957C /* undoDrinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA97226F6231004A957C /* undoDrinks.swift */; };
 		76C1DA9A226F6989004A957C /* calculatePercentageOfGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA99226F6989004A957C /* calculatePercentageOfGoal.swift */; };
 		76C1DA9C226F802A004A957C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA9B226F802A004A957C /* CoreDataManager.swift */; };
-		76C1DAA3226F9A62004A957C /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DAA1226F9A62004A957C /* CollectionViewCell.swift */; };
-		76C1DAA4226F9A62004A957C /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C1DAA2226F9A62004A957C /* CollectionViewCell.xib */; };
 		76F3C464226A27B200E25C34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F3C463226A27B200E25C34 /* AppDelegate.swift */; };
 		76F3C466226A27B200E25C34 /* CurrentAmountDrankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F3C465226A27B200E25C34 /* CurrentAmountDrankViewController.swift */; };
 		76F3C469226A27B200E25C34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76F3C467226A27B200E25C34 /* Main.storyboard */; };
@@ -66,6 +65,7 @@
 		76B20CE5226B27D500AC406A /* SlideUpRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpRoundedView.swift; sourceTree = "<group>"; };
 		76B20CE7226B281900AC406A /* SlideUpRoundedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideUpRoundedView.xib; sourceTree = "<group>"; };
 		76B20CE9226B285500AC406A /* RoundedShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
+		76BB3B7C228B07CE00A05934 /* evaluateAmountDrankAtTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = evaluateAmountDrankAtTime.swift; sourceTree = "<group>"; };
 		76C1DA8E226F4BD1004A957C /* createNewDayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createNewDayEntity.swift; sourceTree = "<group>"; };
 		76C1DA90226F4CF7004A957C /* checkIfDayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkIfDayEntity.swift; sourceTree = "<group>"; };
 		76C1DA92226F4E4A004A957C /* PresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterProtocol.swift; sourceTree = "<group>"; };
@@ -73,8 +73,6 @@
 		76C1DA97226F6231004A957C /* undoDrinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = undoDrinks.swift; sourceTree = "<group>"; };
 		76C1DA99226F6989004A957C /* calculatePercentageOfGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculatePercentageOfGoal.swift; sourceTree = "<group>"; };
 		76C1DA9B226F802A004A957C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		76C1DAA1226F9A62004A957C /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		76C1DAA2226F9A62004A957C /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		76F3C460226A27B200E25C34 /* Drinky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drinky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F3C463226A27B200E25C34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76F3C465226A27B200E25C34 /* CurrentAmountDrankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAmountDrankViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +153,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		76BB3B7B228B07AB00A05934 /* Drinking Progress */ = {
+			isa = PBXGroup;
+			children = (
+				76BB3B7C228B07CE00A05934 /* evaluateAmountDrankAtTime.swift */,
+			);
+			path = "Drinking Progress";
+			sourceTree = "<group>";
+		};
 		76C1DA9E226F99EB004A957C /* SlideUpRoundedView */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,15 +168,6 @@
 				76B20CE7226B281900AC406A /* SlideUpRoundedView.xib */,
 			);
 			path = SlideUpRoundedView;
-			sourceTree = "<group>";
-		};
-		76C1DA9F226F99FB004A957C /* CollectionViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				76C1DAA1226F9A62004A957C /* CollectionViewCell.swift */,
-				76C1DAA2226F9A62004A957C /* CollectionViewCell.xib */,
-			);
-			path = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 		76F3C457226A27B200E25C34 = {
@@ -252,6 +249,7 @@
 		76F3C496226A280700E25C34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				76BB3B7B228B07AB00A05934 /* Drinking Progress */,
 				769461B5226DC35C001C254A /* CoreData */,
 			);
 			path = Models;
@@ -277,7 +275,6 @@
 		76F3C49B226A2B6E00E25C34 /* XIB's */ = {
 			isa = PBXGroup;
 			children = (
-				76C1DA9F226F99FB004A957C /* CollectionViewCells */,
 				76C1DA9E226F99EB004A957C /* SlideUpRoundedView */,
 			);
 			path = "XIB's";
@@ -408,7 +405,6 @@
 				76B20CE8226B281900AC406A /* SlideUpRoundedView.xib in Resources */,
 				76F3C46E226A27B300E25C34 /* Assets.xcassets in Resources */,
 				76F3C469226A27B200E25C34 /* Main.storyboard in Resources */,
-				76C1DAA4226F9A62004A957C /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +522,6 @@
 			files = (
 				76F3C466226A27B200E25C34 /* CurrentAmountDrankViewController.swift in Sources */,
 				76C1DA96226F5086004A957C /* addDrink.swift in Sources */,
-				76C1DAA3226F9A62004A957C /* CollectionViewCell.swift in Sources */,
 				76F3C46C226A27B200E25C34 /* Drinky.xcdatamodeld in Sources */,
 				769461BC226DC73B001C254A /* retrieveDayEntity.swift in Sources */,
 				76C1DA8F226F4BD1004A957C /* createNewDayEntity.swift in Sources */,
@@ -538,6 +533,7 @@
 				76F3C464226A27B200E25C34 /* AppDelegate.swift in Sources */,
 				76C1DA93226F4E4A004A957C /* PresenterProtocol.swift in Sources */,
 				76F3C498226A283500E25C34 /* CurrentAmountDrankPresenter.swift in Sources */,
+				76BB3B7D228B07CE00A05934 /* evaluateAmountDrankAtTime.swift in Sources */,
 				76C1DA9A226F6989004A957C /* calculatePercentageOfGoal.swift in Sources */,
 				76C1DA9C226F802A004A957C /* CoreDataManager.swift in Sources */,
 				769461B7226DC386001C254A /* AppVariables.swift in Sources */,

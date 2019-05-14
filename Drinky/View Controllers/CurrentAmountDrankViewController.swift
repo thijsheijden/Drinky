@@ -20,6 +20,8 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
 
     // IBOutlets
     @IBOutlet weak var amountDrankView: BAFluidView!
+    @IBOutlet weak var amountDrankLabel: UILabel!
+    @IBOutlet weak var amountLeftToDrinkLabel: UILabel!
     
     // variables and constants
     var slideUpView: SlideUpRoundedView!
@@ -34,7 +36,7 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
         // Do any additional setup after loading the view.
         
         screenMinY = self.view.frame.maxY
-        
+
         presenter = CurrentAmountDrankPresenter(view: self)
         presenter.viewDidLoad()
     }
@@ -69,19 +71,39 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
     // setting up all the views on initial load of view controller
     func setupView() {
         setupLiquidBackgroundView()
+        setLabels()
+    }
+    
+    // method which sets both drink labels
+    func setLabels() {
+        setCurrentAmountDrankLabelText(text: presenter.getCurrentAmountDrank())
+        setAmountLeftToGoLabelText(text: presenter.getAmountLeftToDrink())
+        
+        amountDrankLabel.adjustsFontSizeToFitWidth = true
+        amountLeftToDrinkLabel.adjustsFontSizeToFitWidth = true
+    }
+    
+    // method to set the current amount drank label
+    func setCurrentAmountDrankLabelText(text: String) {
+        amountDrankLabel.text = "\(text) mL 💧"
+    }
+    
+    // method to set the amount left to go label
+    func setAmountLeftToGoLabelText(text: String) {
+        amountLeftToDrinkLabel.text = "\(text) mL left"
     }
     
     func setupSlideUpView() {
         slideUpView = Bundle.main.loadNibNamed("SlideUpRoundedView", owner: self, options: nil)!.first as? SlideUpRoundedView
-        slideUpView.frame = CGRect(x: 25, y: screenMinY + 250, width: self.view.frame.width - 50, height: 175)
+        slideUpView.frame = CGRect(x: 25, y: screenMinY + 300, width: self.view.frame.width - 50, height: 300)
         slideUpView.setupView()
         slideUpView.delegate = self
         self.view.addSubview(slideUpView)
-        slideUpView.animateUp(x: 25, width: Int(self.view.frame.width - 50), y: Int(screenMinY - 250))
+        slideUpView.animateUp(x: 25, width: Int(self.view.frame.width - 50), y: Int(screenMinY - 350))
     }
     
     func removeSlideUpView() {
-        slideUpView.animateOut(rect: CGRect(x: 25, y: screenMinY + 250, width: self.view.frame.width - 50, height: 175), completion: { () -> Void in
+        slideUpView.animateOut(rect: CGRect(x: 25, y: screenMinY + 300, width: self.view.frame.width - 50, height: 300), completion: { () -> Void in
             self.slideUpView = nil
         })
     }
@@ -97,6 +119,7 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
     
     @IBAction func undoDrinkButtonPressed(_ sender: Any) {
         presenter.undoLastDrink()
+        setLabels()
     }
     
     func fillDrinkView(ml: Double) {
@@ -110,6 +133,7 @@ extension CurrentAmountDrankViewController: WaterGlassTappedDelegate {
     func waterGlassTapped(mililiters: Int) {
         removeSlideUpView()
         presenter.addDrinkToData(ml: mililiters)
+        setLabels()
     }
     
     func closeButtonTapped() {

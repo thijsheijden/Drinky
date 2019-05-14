@@ -14,32 +14,43 @@ protocol WaterGlassTappedDelegate {
 }
 
 class SlideUpRoundedView: UIView {
-    
+
+    @IBOutlet weak var customAmountDrankPicker: UIPickerView!
+
     var delegate: WaterGlassTappedDelegate?
+    
+    var pickerData: [Int] = [Int]()
     
     func setupView() {
         self.layer.cornerRadius = 15
-        self.layer.shadowColor = UIColor.darkGray.cgColor
-        self.layer.shadowOpacity = 0.5
-        self.layer.shadowRadius = 2
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.layer.shadowRadius = 5.0
+        
+        customAmountDrankPicker.delegate = self
+        customAmountDrankPicker.dataSource = self
+        customAmountDrankPicker.showsSelectionIndicator = true
+        
+        fillPicker()
     }
     
     // method which animates the view from the bottom of the screen
     func animateUp(x: Int, width: Int, y: Int) {
         
-        UIView.animateKeyframes(withDuration: 0.75, delay: 0, options: .calculationModeCubic, animations: {
+        UIView.animateKeyframes(withDuration: 0.7, delay: 0, options: .calculationModeCubic, animations: {
             UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.75) {
-                self.frame = CGRect(x: x, y: y - 15, width: width, height: 175)
+                self.frame = CGRect(x: x, y: y - 15, width: width, height: 300)
             }
             
             UIView.addKeyframe(withRelativeStartTime: 0.75, relativeDuration: 0.25) {
-                self.frame = CGRect(x: x, y: y, width: width, height: 175)
+                self.frame = CGRect(x: x, y: y, width: width, height: 300)
             }
         })
     }
     
     func animateOut(rect: CGRect, completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.4, animations: {
             self.frame = rect
         }, completion: { (finished: Bool) in
             self.removeFromSuperview()
@@ -69,4 +80,36 @@ class SlideUpRoundedView: UIView {
         delegate?.closeButtonTapped()
     }
     
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        let selectedAmountOfWater = pickerData[customAmountDrankPicker.selectedRow(inComponent: 0)]
+        if selectedAmountOfWater > 0 {
+            delegate?.waterGlassTapped(mililiters: selectedAmountOfWater)
+        } else {
+            delegate?.closeButtonTapped()
+        }
+    }
+    
+}
+
+// extension conforming to the pickerview datasource and delegate
+extension SlideUpRoundedView: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    // method which fills the picker with values
+    func fillPicker() {
+        for n in 0...20 {
+            pickerData.append(n*50)
+        }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return String(pickerData[row])
+    }
 }
