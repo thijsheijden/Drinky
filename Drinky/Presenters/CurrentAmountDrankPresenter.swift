@@ -54,7 +54,7 @@ class CurrentAmountDrankPresenter: PresenterProtocol {
     
     // method to retrieve the amount left to drink
     func getAmountLeftToDrink() -> String {
-        let amountLeftToDrink = max(2500 - (retrieveDayEntity()?.mlDrank ?? 0.0), 0)
+        let amountLeftToDrink = max(Double(UserDefaults.standard.integer(forKey: "recommendedAmount")) - (retrieveDayEntity()?.mlDrank ?? 0.0), 0)
         return String(amountLeftToDrink)
     }
 }

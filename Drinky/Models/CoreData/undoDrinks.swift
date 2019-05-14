@@ -46,13 +46,11 @@ func undoDrinks() -> Double {
         CoreDataManager.shared.context.delete(toDeleteDrink)
         
         // calculate the new percentageGoal and pass it back
-        let percentageGoal = calculatePercentageOfGoal(mililiters: -(toDeleteDrink.mililiters), mililitersInDb: day?.mlDrank ?? 0.0)
+        let percentageGoal = calculatePercentageOfGoal(mililiters: -(toDeleteDrink.mililiters), mlInDb: day?.mlDrank ?? 0.0)
         
         day?.mlDrank -= toDeleteDrink.mililiters
         day?.percentageGoal = percentageGoal
-        
-        print("Undo curent percentage goal: \(day?.percentageGoal), mlDrank: \(day?.mlDrank)")
-        
+                
         CoreDataManager.shared.save()
         
         return percentageGoal

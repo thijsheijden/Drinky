@@ -39,10 +39,28 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
 
         presenter = CurrentAmountDrankPresenter(view: self)
         presenter.viewDidLoad()
+        
+        if UserDefaults.standard.integer(forKey: "userWeight") == 0 {
+            addInitialUserDefaultsValues()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        amountDrankView.fill(to: calculatePercentageOfGoal(mililiters: 0) / 100 as NSNumber)
+        setLabels()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         amountDrankView.startTiltAnimation()
+    }
+    
+    // MARK: Remove when initial onboarding has been added
+    func addInitialUserDefaultsValues() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(65, forKey: "userWeight")
+        userDefaults.set(30, forKey: "excersizeMinutesDaily")
+        userDefaults.set(3000, forKey: "recommendedAmount")
     }
     
     // method which creates the CMMotionManager and posts notifications
@@ -59,6 +77,12 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
         }
     }
     
+    // setting up all the views on initial load of view controller
+    func setupView() {
+        setupLiquidBackgroundView()
+        setLabels()
+    }
+    
     // setting up the liquid animated background view
     func setupLiquidBackgroundView() {
         amountDrankView.fillColor = UIColor(hex: 0x397ebe)
@@ -66,12 +90,6 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
         amountDrankView.fillAutoReverse = false
         amountDrankView.fill(to: (retrieveDayEntity()?.percentageGoal ?? 0.0) / 100 as NSNumber?)
         amountDrankView.startAnimation()
-    }
-    
-    // setting up all the views on initial load of view controller
-    func setupView() {
-        setupLiquidBackgroundView()
-        setLabels()
     }
     
     // method which sets both drink labels
@@ -85,7 +103,7 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
     
     // method to set the current amount drank label
     func setCurrentAmountDrankLabelText(text: String) {
-        amountDrankLabel.text = "\(text) mL 💧"
+        amountDrankLabel.text = "\(text) mL"
     }
     
     // method to set the amount left to go label

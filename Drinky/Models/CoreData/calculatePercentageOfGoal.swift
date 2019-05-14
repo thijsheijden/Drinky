@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import CoreData
 
 // method which calculates the percentage of the goal the user has achieved
-func calculatePercentageOfGoal(mililiters: Double, mililitersInDb: Double) -> Double {
-    return Double(((mililitersInDb + mililiters) / AppVariables.goal) * 100)
+func calculatePercentageOfGoal(mililiters: Double, mlInDb: Double = retrieveDayEntity()?.mlDrank ?? 0.0) -> Double {
+    return Double(((mlInDb + mililiters) / Double(UserDefaults.standard.integer(forKey: "recommendedAmount"))) * 100)
 }

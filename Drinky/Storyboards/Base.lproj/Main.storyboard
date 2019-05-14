@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ojp-KM-j4I">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,6 +21,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbU-VO-58e">
+                                <rect key="frame" x="332" y="69" width="57" height="30"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="nZ1-IX-Q2c" kind="show" id="au4-7f-ls7"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8H-AI-Xch">
                                 <rect key="frame" x="175" y="716" width="64" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
@@ -66,6 +73,8 @@
                             <constraint firstAttribute="bottom" secondItem="oDU-2Y-4Ga" secondAttribute="bottom" id="JdW-Du-Rr6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d8H-AI-Xch" secondAttribute="bottom" constant="100" id="Maf-1k-xFR"/>
                             <constraint firstItem="3fh-Z4-INq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NEI-Nx-Kml"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TbU-VO-58e" secondAttribute="trailing" constant="25" id="T0j-N7-cep"/>
+                            <constraint firstItem="TbU-VO-58e" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="THP-x8-DgG"/>
                             <constraint firstItem="3fh-Z4-INq" firstAttribute="top" secondItem="d8H-AI-Xch" secondAttribute="bottom" constant="15" id="YVz-o4-XEC"/>
                             <constraint firstItem="9Xe-5F-HCo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="pdn-xy-8Jh"/>
                             <constraint firstItem="oDU-2Y-4Ga" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qBK-ui-CD5"/>
@@ -74,6 +83,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="CoK-qv-zCd"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="amountDrankLabel" destination="sxH-36-IIk" id="pPc-UL-NRd"/>
                         <outlet property="amountDrankView" destination="oDU-2Y-4Ga" id="snD-tI-psP"/>
@@ -82,7 +93,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gXr-lK-NFJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ojp-KM-j4I" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hsN-Cg-0Ws">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Fq8-RU-rxa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ih4-BI-v8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="AYV-Au-hFu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="nZ1-IX-Q2c" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OfF-JE-eei" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1803" y="139"/>
         </scene>
     </scenes>
 </document>

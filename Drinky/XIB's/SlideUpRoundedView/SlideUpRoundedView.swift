@@ -30,7 +30,6 @@ class SlideUpRoundedView: UIView {
         
         customAmountDrankPicker.delegate = self
         customAmountDrankPicker.dataSource = self
-        customAmountDrankPicker.showsSelectionIndicator = true
         
         fillPicker()
     }
