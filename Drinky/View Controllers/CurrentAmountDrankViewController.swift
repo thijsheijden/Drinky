@@ -34,7 +34,6 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         screenMinY = self.view.frame.maxY
 
         presenter = CurrentAmountDrankPresenter(view: self)

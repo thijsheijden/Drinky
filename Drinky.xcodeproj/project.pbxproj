@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		6A596577B7CA3DD95825BB80 /* Pods_Drinky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492137B3FC136F7466D360BB /* Pods_Drinky.framework */; };
+		7655E33F22A008A0000DCFD2 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655E33E22A008A0000DCFD2 /* NotificationManager.swift */; };
+		7655E34622A009B2000DCFD2 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7655E34522A009B2000DCFD2 /* NotificationCenter.framework */; };
+		7655E34922A009B2000DCFD2 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655E34822A009B2000DCFD2 /* TodayViewController.swift */; };
+		7655E34C22A009B2000DCFD2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7655E34A22A009B2000DCFD2 /* MainInterface.storyboard */; };
+		7655E35022A009B2000DCFD2 /* Drinky Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7655E34422A009B1000DCFD2 /* Drinky Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7655E35722A00B3D000DCFD2 /* ActivityArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655E35622A00B3D000DCFD2 /* ActivityArcView.swift */; };
+		7655E35822A00DDF000DCFD2 /* ActivityArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655E35622A00B3D000DCFD2 /* ActivityArcView.swift */; };
 		769461B7226DC386001C254A /* AppVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461B6226DC386001C254A /* AppVariables.swift */; };
 		769461BA226DC557001C254A /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461B9226DC557001C254A /* DateExtension.swift */; };
 		769461BC226DC73B001C254A /* retrieveDayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461BB226DC73B001C254A /* retrieveDayEntity.swift */; };
@@ -42,6 +49,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7655E34E22A009B2000DCFD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76F3C458226A27B200E25C34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7655E34322A009B1000DCFD2;
+			remoteInfo = "Drinky Widget";
+		};
 		76F3C478226A27B300E25C34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 76F3C458226A27B200E25C34 /* Project object */;
@@ -58,6 +72,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7655E35422A009B2000DCFD2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7655E35022A009B2000DCFD2 /* Drinky Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		056F3D0531BB238F5D662380 /* Pods_DrinkyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DrinkyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1631C769B89F1C715221EF2C /* Pods-DrinkyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrinkyTests.debug.xcconfig"; path = "Target Support Files/Pods-DrinkyTests/Pods-DrinkyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +93,13 @@
 		3FDCB15E84D6827365481ACA /* Pods_DrinkyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DrinkyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		492137B3FC136F7466D360BB /* Pods_Drinky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Drinky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F65162633A9E3D7C88B14C /* Pods-DrinkyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrinkyUITests.debug.xcconfig"; path = "Target Support Files/Pods-DrinkyUITests/Pods-DrinkyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7655E33E22A008A0000DCFD2 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		7655E34422A009B1000DCFD2 /* Drinky Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Drinky Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7655E34522A009B2000DCFD2 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		7655E34822A009B2000DCFD2 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		7655E34B22A009B2000DCFD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		7655E34D22A009B2000DCFD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7655E35622A00B3D000DCFD2 /* ActivityArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityArcView.swift; sourceTree = "<group>"; };
 		769461B6226DC386001C254A /* AppVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVariables.swift; sourceTree = "<group>"; };
 		769461B9226DC557001C254A /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		769461BB226DC73B001C254A /* retrieveDayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = retrieveDayEntity.swift; sourceTree = "<group>"; };
@@ -106,6 +141,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7655E34122A009B1000DCFD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7655E34622A009B2000DCFD2 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		76F3C45D226A27B200E25C34 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -139,8 +182,35 @@
 				492137B3FC136F7466D360BB /* Pods_Drinky.framework */,
 				056F3D0531BB238F5D662380 /* Pods_DrinkyTests.framework */,
 				3FDCB15E84D6827365481ACA /* Pods_DrinkyUITests.framework */,
+				7655E34522A009B2000DCFD2 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7655E33D22A0088C000DCFD2 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				7655E33E22A008A0000DCFD2 /* NotificationManager.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		7655E34722A009B2000DCFD2 /* Drinky Widget */ = {
+			isa = PBXGroup;
+			children = (
+				7655E34822A009B2000DCFD2 /* TodayViewController.swift */,
+				7655E34A22A009B2000DCFD2 /* MainInterface.storyboard */,
+				7655E34D22A009B2000DCFD2 /* Info.plist */,
+			);
+			path = "Drinky Widget";
+			sourceTree = "<group>";
+		};
+		7655E35522A00B2E000DCFD2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7655E35622A00B3D000DCFD2 /* ActivityArcView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		769461B5226DC35C001C254A /* CoreData */ = {
@@ -198,6 +268,7 @@
 				76F3C462226A27B200E25C34 /* Drinky */,
 				76F3C47A226A27B300E25C34 /* DrinkyTests */,
 				76F3C485226A27B300E25C34 /* DrinkyUITests */,
+				7655E34722A009B2000DCFD2 /* Drinky Widget */,
 				76F3C461226A27B200E25C34 /* Products */,
 				A96EE9F7719D08E8E2796077 /* Pods */,
 				753B8071AAF274FC3CA3CD19 /* Frameworks */,
@@ -210,6 +281,7 @@
 				76F3C460226A27B200E25C34 /* Drinky.app */,
 				76F3C477226A27B300E25C34 /* DrinkyTests.xctest */,
 				76F3C482226A27B300E25C34 /* DrinkyUITests.xctest */,
+				7655E34422A009B1000DCFD2 /* Drinky Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,6 +289,7 @@
 		76F3C462226A27B200E25C34 /* Drinky */ = {
 			isa = PBXGroup;
 			children = (
+				7655E35522A00B2E000DCFD2 /* Views */,
 				769461B8226DC54D001C254A /* Extensions */,
 				76B20CE9226B285500AC406A /* RoundedShadowView.swift */,
 				76F3C49B226A2B6E00E25C34 /* XIB's */,
@@ -273,6 +346,7 @@
 		76F3C496226A280700E25C34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7655E33D22A0088C000DCFD2 /* Notifications */,
 				76BB3B7F228B0EC300A05934 /* Settings */,
 				76BB3B7B228B07AB00A05934 /* Drinking Progress */,
 				769461B5226DC35C001C254A /* CoreData */,
@@ -322,6 +396,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7655E34322A009B1000DCFD2 /* Drinky Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7655E35122A009B2000DCFD2 /* Build configuration list for PBXNativeTarget "Drinky Widget" */;
+			buildPhases = (
+				7655E34022A009B1000DCFD2 /* Sources */,
+				7655E34122A009B1000DCFD2 /* Frameworks */,
+				7655E34222A009B1000DCFD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Drinky Widget";
+			productName = "Drinky Widget";
+			productReference = 7655E34422A009B1000DCFD2 /* Drinky Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		76F3C45F226A27B200E25C34 /* Drinky */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 76F3C48B226A27B300E25C34 /* Build configuration list for PBXNativeTarget "Drinky" */;
@@ -331,10 +422,12 @@
 				76F3C45D226A27B200E25C34 /* Frameworks */,
 				76F3C45E226A27B200E25C34 /* Resources */,
 				4AB5103F01037CDB7242184A /* [CP] Embed Pods Frameworks */,
+				7655E35422A009B2000DCFD2 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7655E34F22A009B2000DCFD2 /* PBXTargetDependency */,
 			);
 			name = Drinky;
 			productName = Drinky;
@@ -389,6 +482,9 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Thijs van der Heijden";
 				TargetAttributes = {
+					7655E34322A009B1000DCFD2 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 					76F3C45F226A27B200E25C34 = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -418,11 +514,20 @@
 				76F3C45F226A27B200E25C34 /* Drinky */,
 				76F3C476226A27B300E25C34 /* DrinkyTests */,
 				76F3C481226A27B300E25C34 /* DrinkyUITests */,
+				7655E34322A009B1000DCFD2 /* Drinky Widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7655E34222A009B1000DCFD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7655E34C22A009B2000DCFD2 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		76F3C45E226A27B200E25C34 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -543,6 +648,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7655E34022A009B1000DCFD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7655E35822A00DDF000DCFD2 /* ActivityArcView.swift in Sources */,
+				7655E34922A009B2000DCFD2 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		76F3C45C226A27B200E25C34 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -569,6 +683,8 @@
 				76C1DA9C226F802A004A957C /* CoreDataManager.swift in Sources */,
 				769461B7226DC386001C254A /* AppVariables.swift in Sources */,
 				76BB3B8B228B124F00A05934 /* SettingsPresenter.swift in Sources */,
+				7655E35722A00B3D000DCFD2 /* ActivityArcView.swift in Sources */,
+				7655E33F22A008A0000DCFD2 /* NotificationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +707,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7655E34F22A009B2000DCFD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7655E34322A009B1000DCFD2 /* Drinky Widget */;
+			targetProxy = 7655E34E22A009B2000DCFD2 /* PBXContainerItemProxy */;
+		};
 		76F3C479226A27B300E25C34 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 76F3C45F226A27B200E25C34 /* Drinky */;
@@ -604,6 +725,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7655E34A22A009B2000DCFD2 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7655E34B22A009B2000DCFD2 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		76F3C467226A27B200E25C34 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -623,6 +752,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7655E35222A009B2000DCFD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25N3QHSSX3;
+				INFOPLIST_FILE = "Drinky Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.thijsvanderheijden.Drinky.Drinky-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7655E35322A009B2000DCFD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 25N3QHSSX3;
+				INFOPLIST_FILE = "Drinky Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "eu.thijsvanderheijden.Drinky.Drinky-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		76F3C489226A27B300E25C34 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -743,6 +912,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A74288FB2403F173603E6E2 /* Pods-Drinky.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25N3QHSSX3;
@@ -763,6 +933,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A89D86C38150FF647950A8EB /* Pods-Drinky.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25N3QHSSX3;
@@ -868,6 +1039,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7655E35122A009B2000DCFD2 /* Build configuration list for PBXNativeTarget "Drinky Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7655E35222A009B2000DCFD2 /* Debug */,
+				7655E35322A009B2000DCFD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		76F3C45B226A27B200E25C34 /* Build configuration list for PBXProject "Drinky" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

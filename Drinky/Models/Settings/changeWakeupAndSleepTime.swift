@@ -10,5 +10,4 @@ import Foundation
 
 // this method changes the times the user wakes up and goes to sleep, used for sending notifications
 func changeWakeupAndSleepTime() {
-    
 }

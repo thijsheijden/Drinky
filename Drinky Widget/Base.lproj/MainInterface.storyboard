@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="Drinky_Widget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39W-I2-L6M" customClass="ActivityArcView" customModule="Drinky_Widget" customModuleProvider="target">
+                                <rect key="frame" x="5" y="5" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="aNW-iH-8zA"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8B-XM-aRl">
+                                <rect key="frame" x="110" y="5" width="205" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="k8B-XM-aRl" secondAttribute="trailing" constant="5" id="EW4-T5-1yP"/>
+                            <constraint firstItem="k8B-XM-aRl" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="5" id="P9p-dI-Krd"/>
+                            <constraint firstItem="k8B-XM-aRl" firstAttribute="leading" secondItem="39W-I2-L6M" secondAttribute="trailing" constant="5" id="fHf-xD-t7B"/>
+                            <constraint firstItem="39W-I2-L6M" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="5" id="gsF-U4-hTx"/>
+                            <constraint firstItem="39W-I2-L6M" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="5" id="juh-NB-hsH"/>
+                            <constraint firstAttribute="bottom" secondItem="39W-I2-L6M" secondAttribute="bottom" constant="5" id="wZu-yz-urF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="110"/>
+                    <connections>
+                        <outlet property="activityView" destination="39W-I2-L6M" id="N35-9z-YWf"/>
+                        <outlet property="amountDrankLabel" destination="k8B-XM-aRl" id="uFr-jI-O3t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
