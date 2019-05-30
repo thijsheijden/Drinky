@@ -17,7 +17,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityView.endArc = 0.75
+        // setting all the ui element values
+        let today = retrieveDayEntity()
+        activityView.endArc = CGFloat(today?.percentageGoal ?? 0.0) / 100.0
+        amountDrankLabel.text = String(today?.drinkTaken?.count ?? 0)
+        
         
     }
         

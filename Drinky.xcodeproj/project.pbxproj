@@ -10,11 +10,17 @@
 		6A596577B7CA3DD95825BB80 /* Pods_Drinky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492137B3FC136F7466D360BB /* Pods_Drinky.framework */; };
 		7655E33F22A008A0000DCFD2 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655E33E22A008A0000DCFD2 /* NotificationManager.swift */; };
 		7655E34622A009B2000DCFD2 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7655E34522A009B2000DCFD2 /* NotificationCenter.framework */; };
-		7655E34922A009B2000DCFD2 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655E34822A009B2000DCFD2 /* TodayViewController.swift */; };
 		7655E34C22A009B2000DCFD2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7655E34A22A009B2000DCFD2 /* MainInterface.storyboard */; };
 		7655E35022A009B2000DCFD2 /* Drinky Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7655E34422A009B1000DCFD2 /* Drinky Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7655E35722A00B3D000DCFD2 /* ActivityArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655E35622A00B3D000DCFD2 /* ActivityArcView.swift */; };
-		7655E35822A00DDF000DCFD2 /* ActivityArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655E35622A00B3D000DCFD2 /* ActivityArcView.swift */; };
+		7655E36122A0340E000DCFD2 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655E34822A009B2000DCFD2 /* TodayViewController.swift */; };
+		7655E36222A03435000DCFD2 /* Drinky.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 76F3C46A226A27B200E25C34 /* Drinky.xcdatamodeld */; };
+		7655E36622A03639000DCFD2 /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655E36522A03639000DCFD2 /* NSCustomPersistentContainer.swift */; };
+		7655E36822A03A37000DCFD2 /* ActivityArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655E35622A00B3D000DCFD2 /* ActivityArcView.swift */; };
+		7679049D22A03ACA005C8520 /* retrieveDayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461BB226DC73B001C254A /* retrieveDayEntity.swift */; };
+		7679049E22A03ACD005C8520 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461B9226DC557001C254A /* DateExtension.swift */; };
+		7679049F22A03AF0005C8520 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA9B226F802A004A957C /* CoreDataManager.swift */; };
+		767904A022A03AF7005C8520 /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655E36522A03639000DCFD2 /* NSCustomPersistentContainer.swift */; };
 		769461B7226DC386001C254A /* AppVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461B6226DC386001C254A /* AppVariables.swift */; };
 		769461BA226DC557001C254A /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461B9226DC557001C254A /* DateExtension.swift */; };
 		769461BC226DC73B001C254A /* retrieveDayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461BB226DC73B001C254A /* retrieveDayEntity.swift */; };
@@ -100,6 +106,9 @@
 		7655E34B22A009B2000DCFD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		7655E34D22A009B2000DCFD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7655E35622A00B3D000DCFD2 /* ActivityArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityArcView.swift; sourceTree = "<group>"; };
+		7655E35E22A0332A000DCFD2 /* Drinky Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Drinky Widget.entitlements"; sourceTree = "<group>"; };
+		7655E35F22A0337D000DCFD2 /* Drinky.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Drinky.entitlements; sourceTree = "<group>"; };
+		7655E36522A03639000DCFD2 /* NSCustomPersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCustomPersistentContainer.swift; sourceTree = "<group>"; };
 		769461B6226DC386001C254A /* AppVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVariables.swift; sourceTree = "<group>"; };
 		769461B9226DC557001C254A /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		769461BB226DC73B001C254A /* retrieveDayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = retrieveDayEntity.swift; sourceTree = "<group>"; };
@@ -198,6 +207,7 @@
 		7655E34722A009B2000DCFD2 /* Drinky Widget */ = {
 			isa = PBXGroup;
 			children = (
+				7655E35E22A0332A000DCFD2 /* Drinky Widget.entitlements */,
 				7655E34822A009B2000DCFD2 /* TodayViewController.swift */,
 				7655E34A22A009B2000DCFD2 /* MainInterface.storyboard */,
 				7655E34D22A009B2000DCFD2 /* Info.plist */,
@@ -231,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				769461B9226DC557001C254A /* DateExtension.swift */,
+				7655E36522A03639000DCFD2 /* NSCustomPersistentContainer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -289,6 +300,7 @@
 		76F3C462226A27B200E25C34 /* Drinky */ = {
 			isa = PBXGroup;
 			children = (
+				7655E35F22A0337D000DCFD2 /* Drinky.entitlements */,
 				7655E35522A00B2E000DCFD2 /* Views */,
 				769461B8226DC54D001C254A /* Extensions */,
 				76B20CE9226B285500AC406A /* RoundedShadowView.swift */,
@@ -484,9 +496,19 @@
 				TargetAttributes = {
 					7655E34322A009B1000DCFD2 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					76F3C45F226A27B200E25C34 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					76F3C476226A27B300E25C34 = {
 						CreatedOnToolsVersion = 10.2;
@@ -652,8 +674,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7655E35822A00DDF000DCFD2 /* ActivityArcView.swift in Sources */,
-				7655E34922A009B2000DCFD2 /* TodayViewController.swift in Sources */,
+				767904A022A03AF7005C8520 /* NSCustomPersistentContainer.swift in Sources */,
+				7679049F22A03AF0005C8520 /* CoreDataManager.swift in Sources */,
+				7655E36222A03435000DCFD2 /* Drinky.xcdatamodeld in Sources */,
+				7679049E22A03ACD005C8520 /* DateExtension.swift in Sources */,
+				7655E36822A03A37000DCFD2 /* ActivityArcView.swift in Sources */,
+				7655E36122A0340E000DCFD2 /* TodayViewController.swift in Sources */,
+				7679049D22A03ACA005C8520 /* retrieveDayEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +704,7 @@
 				76BB3B85228B0EE900A05934 /* changeWeightAndExcersize.swift in Sources */,
 				76F3C464226A27B200E25C34 /* AppDelegate.swift in Sources */,
 				76C1DA93226F4E4A004A957C /* PresenterProtocol.swift in Sources */,
+				7655E36622A03639000DCFD2 /* NSCustomPersistentContainer.swift in Sources */,
 				76F3C498226A283500E25C34 /* CurrentAmountDrankPresenter.swift in Sources */,
 				76BB3B7D228B07CE00A05934 /* evaluateAmountDrankAtTime.swift in Sources */,
 				76C1DA9A226F6989004A957C /* calculatePercentageOfGoal.swift in Sources */,
@@ -755,6 +783,7 @@
 		7655E35222A009B2000DCFD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Drinky Widget/Drinky Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25N3QHSSX3;
 				INFOPLIST_FILE = "Drinky Widget/Info.plist";
@@ -775,6 +804,7 @@
 		7655E35322A009B2000DCFD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Drinky Widget/Drinky Widget.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25N3QHSSX3;
 				INFOPLIST_FILE = "Drinky Widget/Info.plist";
@@ -914,6 +944,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Drinky/Drinky.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25N3QHSSX3;
 				INFOPLIST_FILE = Drinky/Info.plist;
@@ -935,6 +966,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Drinky/Drinky.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 25N3QHSSX3;
 				INFOPLIST_FILE = Drinky/Info.plist;
