@@ -127,6 +127,8 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
     
     // MARK: All Actions
     @IBAction func drinkButtonPressed(_ sender: Any) {
+        
+        NotificationManager.shared.checkPermission()
         if slideUpView != nil {
             removeSlideUpView()
         } else {

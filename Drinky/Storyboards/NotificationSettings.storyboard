@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JaK-aH-qtx">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notification Settings-->
+        <scene sceneID="FCM-sj-DXt">
+            <objects>
+                <viewController title="Notification Settings" id="JaK-aH-qtx" customClass="NotificationSettingsViewController" customModule="Drinky" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tWK-ST-AdV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bMc-3V-hO0">
+                                <rect key="frame" x="5" y="59" width="404" height="798"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TDU-uW-pUg">
+                                        <rect key="frame" x="25" y="0.0" width="354" height="45"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swA-bj-IN6">
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="45"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fbT-Zh-As2">
+                                                <rect key="frame" x="305" y="0.0" width="51" height="45"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMZ-CK-2R3">
+                                        <rect key="frame" x="174.5" y="55" width="55.5" height="34.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tKI-Bs-ik1">
+                                        <rect key="frame" x="42" y="99.5" width="320" height="313"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="580998534.56163394">
+                                            <!--2019-05-31 12:28:54 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="fromTimeChanged:" destination="JaK-aH-qtx" eventType="valueChanged" id="rOH-rO-qwO"/>
+                                        </connections>
+                                    </datePicker>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIB-mb-0Qg">
+                                        <rect key="frame" x="188" y="422.5" width="28" height="34.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lao-23-Ji0">
+                                        <rect key="frame" x="42" y="467" width="320" height="331"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="580998534.56163394">
+                                            <!--2019-05-31 12:28:54 +0000-->
+                                        </date>
+                                        <connections>
+                                            <action selector="toTimeChanged:" destination="JaK-aH-qtx" eventType="valueChanged" id="vIL-cj-9XJ"/>
+                                        </connections>
+                                    </datePicker>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="TDU-uW-pUg" secondAttribute="trailing" constant="25" id="OA1-uI-8gf"/>
+                                    <constraint firstItem="TDU-uW-pUg" firstAttribute="leading" secondItem="bMc-3V-hO0" secondAttribute="leading" constant="25" id="R5z-Nn-mEX"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bMc-3V-hO0" firstAttribute="top" secondItem="xjh-62-XIm" secondAttribute="top" constant="15" id="EAp-iw-nAJ"/>
+                            <constraint firstItem="xjh-62-XIm" firstAttribute="bottom" secondItem="bMc-3V-hO0" secondAttribute="bottom" constant="5" id="jvy-gt-rRq"/>
+                            <constraint firstItem="bMc-3V-hO0" firstAttribute="leading" secondItem="tWK-ST-AdV" secondAttribute="leading" constant="5" id="pVI-ed-fSG"/>
+                            <constraint firstItem="xjh-62-XIm" firstAttribute="trailing" secondItem="bMc-3V-hO0" secondAttribute="trailing" constant="5" id="vLL-cJ-XCx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xjh-62-XIm"/>
+                    </view>
+                    <connections>
+                        <outlet property="fromTimePickerView" destination="tKI-Bs-ik1" id="x9a-Rv-hth"/>
+                        <outlet property="toTimePickerView" destination="lao-23-Ji0" id="nL6-Nj-Jes"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mtN-oO-k2H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2389.8550724637685" y="-238.39285714285714"/>
+        </scene>
+    </scenes>
+</document>

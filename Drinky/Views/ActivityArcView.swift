@@ -36,7 +36,7 @@ class ActivityArcView: UIView {
         
         let bezierPath = UIBezierPath()
         
-        var circleLayer = CAShapeLayer()
+        let circleLayer = CAShapeLayer()
         circleLayer.lineWidth = arcWidth
         circleLayer.lineCap = .round
         circleLayer.fillColor = UIColor.clear.cgColor
@@ -48,7 +48,7 @@ class ActivityArcView: UIView {
         
         self.layer.addSublayer(circleLayer)
         
-        var animation = CABasicAnimation(keyPath: "strokeEnd")
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = 0.0
         animation.toValue = 1.0
         animation.duration = 0.75
