@@ -31,6 +31,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fbT-Zh-As2">
                                                 <rect key="frame" x="305" y="0.0" width="51" height="45"/>
+                                                <connections>
+                                                    <action selector="notificationsToggled:" destination="JaK-aH-qtx" eventType="valueChanged" id="xce-eo-8F4"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -82,6 +85,7 @@
                     </view>
                     <connections>
                         <outlet property="fromTimePickerView" destination="tKI-Bs-ik1" id="x9a-Rv-hth"/>
+                        <outlet property="notificationsSwitch" destination="fbT-Zh-As2" id="Mvz-4B-hy7"/>
                         <outlet property="toTimePickerView" destination="lao-23-Ji0" id="nL6-Nj-Jes"/>
                     </connections>
                 </viewController>

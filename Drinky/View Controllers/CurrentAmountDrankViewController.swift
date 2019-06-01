@@ -128,7 +128,9 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
     // MARK: All Actions
     @IBAction func drinkButtonPressed(_ sender: Any) {
         
-        NotificationManager.shared.checkPermission()
+        AppVariables.startTime = 7
+        AppVariables.endTime = 21
+        
         if slideUpView != nil {
             removeSlideUpView()
         } else {

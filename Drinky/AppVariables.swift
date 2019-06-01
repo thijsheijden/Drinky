@@ -13,4 +13,33 @@ class AppVariables {
     
     // the app's appdelegate
     static let appDelegate = UIApplication.shared.delegate as? AppDelegate
+    
+    
+}
+
+// MARK: All the UserDefaults data
+extension AppVariables {
+    static var notifications: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "notificationsToggled")
+        } set {
+            UserDefaults.standard.set(newValue, forKey: "notificationsToggled")
+        }
+    }
+    
+    static var startTime: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "notificationsStartTime")
+        } set {
+            UserDefaults.standard.set(newValue, forKey: "notificationsStartTime")
+        }
+    }
+    
+    static var endTime: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "notificationsEndTime")
+        } set {
+            UserDefaults.standard.set(newValue, forKey: "notificationsEndTime")
+        }
+    }
 }

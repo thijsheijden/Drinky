@@ -9,7 +9,7 @@
 import UIKit
 
 protocol NotificationSettingsViewControllerProtocol {
-    
+    func setupView()
 }
 
 class NotificationSettingsViewController: UIViewController, NotificationSettingsViewControllerProtocol {
@@ -18,6 +18,7 @@ class NotificationSettingsViewController: UIViewController, NotificationSettings
 
     @IBOutlet weak var fromTimePickerView: UIDatePicker!
     @IBOutlet weak var toTimePickerView: UIDatePicker!
+    @IBOutlet weak var notificationsSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,15 @@ class NotificationSettingsViewController: UIViewController, NotificationSettings
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    // MARK: Setting up the view
+    func setupView() {
+        if AppVariables.notifications {
+            notificationsSwitch.isOn = true
+        } else {
+            notificationsSwitch.isOn = false
+        }
     }
 
     // MARK: Value changed for both of the picker views
@@ -44,6 +54,17 @@ class NotificationSettingsViewController: UIViewController, NotificationSettings
         let time = picker.date.format(format: "hh-mm-ss")
     }
     
+    @IBAction func notificationsToggled(_ sender: Any) {
+        let toggle: Bool = notificationsSwitch.isOn
+        NotificationManager.shared.checkPermission(completion: { (allowed) in
+            if allowed {
+                AppVariables.notifications = toggle
+                NotificationManager.shared.toggleNotifications(on: toggle)
+            } else {
+                NotificationManager.shared.askPermission()
+            }
+        })
+    }
 }
 
 // MARK: All the time picker code

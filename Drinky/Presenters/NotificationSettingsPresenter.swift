@@ -19,7 +19,7 @@ class NotificationSettingsPresenter: PresenterProtocol {
     }
     
     func viewDidLoad() {
-        // do stuff
+        view.setupView()
     }
     
     // update the userDefaults values for notification times
