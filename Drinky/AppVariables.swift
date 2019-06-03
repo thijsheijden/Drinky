@@ -42,4 +42,22 @@ extension AppVariables {
             UserDefaults.standard.set(newValue, forKey: "notificationsEndTime")
         }
     }
+    
+    static var notificationIntervalHours: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "notificationsIntervalHours")
+        } set {
+            UserDefaults.standard.set(newValue, forKey: "notificationsIntervalHours")
+            
+        }
+    }
+    
+    static var notificationIntervalMinutes: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "notificationsIntervalMinutes")
+        } set {
+            UserDefaults.standard.set(newValue, forKey: "notificationsIntervalMinutes")
+            
+        }
+    }
 }

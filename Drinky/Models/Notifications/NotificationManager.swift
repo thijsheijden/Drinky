@@ -11,15 +11,43 @@ import UserNotifications
 
 class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     
-    private override init() {
-        super.init()
-        notificationCenter.delegate = self
-        print("initialized")
-    }
-    
     static let shared = NotificationManager()
     let notificationCenter = UNUserNotificationCenter.current()
     
+    private override init() {
+        super.init()
+        notificationCenter.delegate = self
+        setupNotificationCategoriesAndActions()
+    }
+    
+    // method which sets up the notification categories and actions at application launch
+    func setupNotificationCategoriesAndActions() {
+        
+        // Define the custom actions.
+        let drinkSmallGlassAction = UNNotificationAction(identifier: "drinkSmallGlassNotificationAction",
+                                                title: "Drink Small Glass (150mL)",
+                                                options: UNNotificationActionOptions(rawValue: 0))
+        
+        let drinkMediumGlassAction = UNNotificationAction(identifier: "drinkMediumGlassNotificationAction",
+                                                 title: "Drink Medium Glass (200mL)",
+                                                 options: UNNotificationActionOptions(rawValue: 0))
+        
+        let drinkLargeGlassAction = UNNotificationAction(identifier: "drinkLargeGlassNotificationAction",
+                                                          title: "Drink Large Glass (300mL)",
+                                                          options: UNNotificationActionOptions(rawValue: 0))
+        
+        // Define the notification type
+        let takeDrinkNotificationActionCategory =
+            UNNotificationCategory(identifier: "takeDrinkNotificationCategory",
+                                   actions: [drinkSmallGlassAction, drinkMediumGlassAction, drinkLargeGlassAction],
+                                   intentIdentifiers: [],
+                                   hiddenPreviewsBodyPlaceholder: "",
+                                   options: .customDismissAction)
+        
+        // Register the notification type.
+        notificationCenter.setNotificationCategories([takeDrinkNotificationActionCategory])
+    }
+
     // method which returns wether the user allowed notifications, and can then call another method
     func checkPermission(completion: @escaping (Bool) -> Void) {
         notificationCenter.getNotificationSettings(completionHandler: { (settings) in
@@ -40,55 +68,46 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     
     // method to schedule the next notifications (and remove the old ones from the schedule)
     func prepareNextNotifications() {
-        print("Preparing notification")
-        
-        // setting the content of the notification
-        let content = UNMutableNotificationContent()
-        content.title = NSString.localizedUserNotificationString(forKey: "Time to drink something.", arguments: nil)
-        content.body = NSString.localizedUserNotificationString(forKey: "It seems like you haven't drank anything in the past hour, remember to keep your body hydrated!", arguments: nil)
-        
-        // Configure the recurring date.
-        var dateComponents = DateComponents()
-        dateComponents.calendar = Calendar.current
-        
-        // Schedule the notification in the next hour
-        if checkIfNextNotificationFits() {
-//                    dateComponents.hour = Calendar.current.component(.hour, from: Date()) + 1
+        if AppVariables.notifications {
+            print("Preparing notification")
+            
+            var dateComponents = DateComponents()
+            dateComponents.calendar = Calendar.current
+            
+            // setting the content of the notification
+            let content = UNMutableNotificationContent()
+            content.title = NSString.localizedUserNotificationString(forKey: "Time to drink something.", arguments: nil)
+            content.body = NSString.localizedUserNotificationString(forKey: "It seems like you haven't drank anything in the past hour, remember to keep your body hydrated!", arguments: nil)
+            content.categoryIdentifier = "takeDrinkNotificationCategory"
+            
+            // Schedule the notification in the next interval
             dateComponents.second = Calendar.current.component(.second, from: Date()) + 5
-        } else {
-            // if the notification in the next hour doesnt fit in the range, schedule it for the next morning at start time
-//                    dateComponents.day = Calendar.current.component(.day, from: Date()) + 1
-//                    dateComponents.hour = AppVariables.startTime
+            //        dateComponents.hour += AppVariables.notificationIntervalHours
+            //        dateComponents.minute += AppVariables.notificationIntervalMinutes
+            
+            // Create the trigger
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            
+            let uuidString = UUID().uuidString
+            let request = UNNotificationRequest(identifier: uuidString,
+                                                content: content, trigger: trigger)
+            
+            notificationCenter.add(request, withCompletionHandler: nil)
         }
-        
-        // Create the trigger
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        
-        let uuidString = UUID().uuidString
-        let request = UNNotificationRequest(identifier: uuidString,
-                                            content: content, trigger: trigger)
-        
-        // Schedule the request with the system.
-        let notificationCenter = UNUserNotificationCenter.current()
-        notificationCenter.add(request, withCompletionHandler: { (error) in
-            if(error != nil) {
-                // Do something with this error?
-                print(error)
-            }
-        })
     }
     
-    func turnOffNotifications() {
+    // remove all the pending notifications from the notification queue
+    func removeAllPendingNotifications() {
         notificationCenter.removeAllPendingNotificationRequests()
     }
     
     // MARK: Methods to change the state of notifications
     func toggleNotifications(on: Bool) {
+        AppVariables.notifications = on
         if(on) {
-            print("turned notifications on")
             prepareNextNotifications()
         } else {
-            turnOffNotifications()
+            removeAllPendingNotifications()
         }
     }
     
@@ -101,8 +120,17 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         return false
     }
     
-    // MARK: Delegate code, catching when a notification has been sent out, to register another one
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        switch response.actionIdentifier {
+        case "drinkSmallGlassNotificationAction":
+            addDrink(mililiters: 150)
+        case "drinkMediumGlassNotificationAction":
+            addDrink(mililiters: 200)
+        case "drinkLargeGlassNotificationAction":
+            addDrink(mililiters: 300)
+        default:
+            addDrink(mililiters: 1000)
+        }
         prepareNextNotifications()
         completionHandler()
     }

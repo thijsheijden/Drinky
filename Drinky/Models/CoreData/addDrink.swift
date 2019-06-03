@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 // method which adds the drink taken to the database
-func addDrink(mililiters: Double, completion: @escaping (Double) -> Void) {
+func addDrink(mililiters: Double, completion: ((Double) -> Void)? = nil) {
     
     // get current time as date object
     let time = Date().format(format: "hh-mm-ss")
@@ -34,5 +34,14 @@ func addDrink(mililiters: Double, completion: @escaping (Double) -> Void) {
     day?.addToDrinkTaken(drink)
     
     CoreDataManager.shared.save()
-    completion(percentageGoal)
+    
+    // cancel all the scheduled notifications and move them to the next interval, as the user just drank something
+    NotificationManager.shared.removeAllPendingNotifications()
+    
+    // schedule a new notification if allowed
+    NotificationManager.shared.prepareNextNotifications()
+    
+    if(completion != nil) {
+        completion!(percentageGoal)
+    }
 }

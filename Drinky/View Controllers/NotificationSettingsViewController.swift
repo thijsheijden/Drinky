@@ -58,7 +58,6 @@ class NotificationSettingsViewController: UIViewController, NotificationSettings
         let toggle: Bool = notificationsSwitch.isOn
         NotificationManager.shared.checkPermission(completion: { (allowed) in
             if allowed {
-                AppVariables.notifications = toggle
                 NotificationManager.shared.toggleNotifications(on: toggle)
             } else {
                 NotificationManager.shared.askPermission()
