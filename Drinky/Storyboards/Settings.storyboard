@@ -20,26 +20,33 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="rXN-3G-ucG">
                                 <rect key="frame" x="5" y="59" width="404" height="788"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMw-J4-Ppi">
+                                        <rect key="frame" x="142" y="0.0" width="120" height="42.5"/>
+                                        <state key="normal" title="Turn On Healthkit"/>
+                                        <connections>
+                                            <action selector="turnOnHealthkitButtonPressed:" destination="bDE-ux-n63" eventType="touchUpInside" id="Mpb-zd-Guz"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight (kg)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pck-Se-xIk">
-                                        <rect key="frame" x="148.5" y="0.0" width="107" height="36"/>
+                                        <rect key="frame" x="148.5" y="46.5" width="107" height="33.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lf3-2u-j6g">
-                                        <rect key="frame" x="42" y="40" width="320" height="324"/>
+                                        <rect key="frame" x="42" y="84" width="320" height="304.5"/>
                                     </pickerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excersize (minutes/day)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IxJ-c3-TTY">
-                                        <rect key="frame" x="88.5" y="368" width="227.5" height="36.5"/>
+                                        <rect key="frame" x="88.5" y="392.5" width="227.5" height="34"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWD-bc-acl">
-                                        <rect key="frame" x="42" y="408.5" width="320" height="324"/>
+                                        <rect key="frame" x="42" y="430.5" width="320" height="304.5"/>
                                     </pickerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended amount: 2500 mL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TiS-Dq-lpv">
-                                        <rect key="frame" x="27.5" y="736.5" width="349.5" height="51.5"/>
+                                        <rect key="frame" x="27.5" y="739" width="349.5" height="49"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

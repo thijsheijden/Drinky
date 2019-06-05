@@ -42,6 +42,9 @@ func undoDrinks() -> Double {
             }
         }
 
+        // remove the drink taken from the health store
+        HealthKitManager.shared.removeMostRecentDrink(date: toDeleteDrink.time!)
+        
         day?.removeFromDrinkTaken(toDeleteDrink)
         CoreDataManager.shared.context.delete(toDeleteDrink)
         

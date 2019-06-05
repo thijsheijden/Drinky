@@ -10,6 +10,8 @@ import UIKit
 
 class NotificationRangeSlider: UIControl {
     
+    private var previousLocation = CGPoint()
+    
     override var frame: CGRect {
         didSet {
             updateLayerFrames()
@@ -66,13 +68,66 @@ class NotificationRangeSlider: UIControl {
         let x = positionForValue(value) - lowerThumbImage.size.width / 2.0
         return CGPoint(x: x, y: (bounds.height - lowerThumbImage.size.height) / 2.0)
     }
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
+}
+
+// MARK: All the touch tracking
+extension NotificationRangeSlider {
+    
+    override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        // 1
+        previousLocation = touch.location(in: self)
+        
+        // 2
+        if lowerThumbImageView.frame.contains(previousLocation) {
+            lowerThumbImageView.isHighlighted = true
+        } else if upperThumbImageView.frame.contains(previousLocation) {
+            upperThumbImageView.isHighlighted = true
+        }
+        
+        // 3
+        return lowerThumbImageView.isHighlighted || upperThumbImageView.isHighlighted
+    }
+    
+    override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
+        let location = touch.location(in: self)
+        
+        // 1
+        let deltaLocation = location.x - previousLocation.x
+        let deltaValue = (maximumValue - minimumValue) * deltaLocation / bounds.width
+        
+        previousLocation = location
+        
+        // 2
+        if lowerThumbImageView.isHighlighted {
+            lowerValue += deltaValue
+            lowerValue = boundValue(lowerValue, toLowerValue: minimumValue,
+                                    upperValue: upperValue)
+        } else if upperThumbImageView.isHighlighted {
+            upperValue += deltaValue
+            upperValue = boundValue(upperValue, toLowerValue: lowerValue,
+                                    upperValue: maximumValue)
+        }
+        
+        // 3
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        
+        updateLayerFrames()
+        
+        CATransaction.commit()
+        
+        return true
+    }
+    
+    // 4
+    private func boundValue(_ value: CGFloat, toLowerValue lowerValue: CGFloat,
+                            upperValue: CGFloat) -> CGFloat {
+        return min(max(value, lowerValue), upperValue)
+    }
+    
+    override func endTracking(_ touch: UITouch?, with event: UIEvent?) {
+        lowerThumbImageView.isHighlighted = false
+        upperThumbImageView.isHighlighted = false
+    }
 }

@@ -58,6 +58,20 @@ class SettingsViewController: UIViewController, SettingsViewControllerProtocol {
     func updateRecommendedAmountOfWaterLabelText(text: String) {
         recommendedAmountLabel.text = "Recommended daily intake: \(text) mL"
     }
+    
+    @IBAction func turnOnHealthkitButtonPressed(_ sender: Any) {
+        HealthKitManager.shared.askForHealthKitPermission(completion: { (status) in
+            switch status {
+            case .authorized:
+                print("Authorized!")
+            case .notAuthorized:
+                print("Not Authorized")
+            default:
+                print("Esketit")
+            }
+        })
+    }
+    
 
 }
 

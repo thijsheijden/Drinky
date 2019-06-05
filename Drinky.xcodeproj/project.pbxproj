@@ -55,6 +55,8 @@
 		76C1DA98226F6231004A957C /* undoDrinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA97226F6231004A957C /* undoDrinks.swift */; };
 		76C1DA9A226F6989004A957C /* calculatePercentageOfGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA99226F6989004A957C /* calculatePercentageOfGoal.swift */; };
 		76C1DA9C226F802A004A957C /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA9B226F802A004A957C /* CoreDataManager.swift */; };
+		76E51FCA22A828C30060DD0A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E51FC922A828C30060DD0A /* HealthKit.framework */; };
+		76E51FCD22A829050060DD0A /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E51FCC22A829050060DD0A /* HealthKitManager.swift */; };
 		76F3C464226A27B200E25C34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F3C463226A27B200E25C34 /* AppDelegate.swift */; };
 		76F3C466226A27B200E25C34 /* CurrentAmountDrankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F3C465226A27B200E25C34 /* CurrentAmountDrankViewController.swift */; };
 		76F3C469226A27B200E25C34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76F3C467226A27B200E25C34 /* Main.storyboard */; };
@@ -196,6 +198,8 @@
 		76C1DA97226F6231004A957C /* undoDrinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = undoDrinks.swift; sourceTree = "<group>"; };
 		76C1DA99226F6989004A957C /* calculatePercentageOfGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculatePercentageOfGoal.swift; sourceTree = "<group>"; };
 		76C1DA9B226F802A004A957C /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		76E51FC922A828C30060DD0A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		76E51FCC22A829050060DD0A /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		76F3C460226A27B200E25C34 /* Drinky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drinky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F3C463226A27B200E25C34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76F3C465226A27B200E25C34 /* CurrentAmountDrankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAmountDrankViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A596577B7CA3DD95825BB80 /* Pods_Drinky.framework in Frameworks */,
+				76E51FCA22A828C30060DD0A /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +267,7 @@
 		753B8071AAF274FC3CA3CD19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				76E51FC922A828C30060DD0A /* HealthKit.framework */,
 				492137B3FC136F7466D360BB /* Pods_Drinky.framework */,
 				056F3D0531BB238F5D662380 /* Pods_DrinkyTests.framework */,
 				3FDCB15E84D6827365481ACA /* Pods_DrinkyUITests.framework */,
@@ -381,6 +387,14 @@
 			path = SlideUpRoundedView;
 			sourceTree = "<group>";
 		};
+		76E51FCB22A828F80060DD0A /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				76E51FCC22A829050060DD0A /* HealthKitManager.swift */,
+			);
+			path = HealthKit;
+			sourceTree = "<group>";
+		};
 		76F3C457226A27B200E25C34 = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +486,7 @@
 		76F3C496226A280700E25C34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				76E51FCB22A828F80060DD0A /* HealthKit */,
 				7655E33D22A0088C000DCFD2 /* Notifications */,
 				76BB3B7F228B0EC300A05934 /* Settings */,
 				76BB3B7B228B07AB00A05934 /* Drinking Progress */,
@@ -668,6 +683,9 @@
 						CreatedOnToolsVersion = 10.2;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.HealthKit = {
 								enabled = 1;
 							};
 						};
@@ -899,6 +917,7 @@
 				76B20CE6226B27D500AC406A /* SlideUpRoundedView.swift in Sources */,
 				76BB3B85228B0EE900A05934 /* changeWeightAndExcersize.swift in Sources */,
 				76F3C464226A27B200E25C34 /* AppDelegate.swift in Sources */,
+				76E51FCD22A829050060DD0A /* HealthKitManager.swift in Sources */,
 				76C1DA93226F4E4A004A957C /* PresenterProtocol.swift in Sources */,
 				76085FE022A147B50084B8E1 /* NotificationSettingsViewController.swift in Sources */,
 				7655E36622A03639000DCFD2 /* NSCustomPersistentContainer.swift in Sources */,

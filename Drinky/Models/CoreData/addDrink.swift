@@ -13,7 +13,7 @@ import CoreData
 func addDrink(mililiters: Double, completion: ((Double) -> Void)? = nil) {
     
     // get current time as date object
-    let time = Date().format(format: "hh-mm-ss")
+    let time = Date().format()
     
     // create a drink entity object
     let drink = Drink(context: CoreDataManager.shared.context)
@@ -40,6 +40,9 @@ func addDrink(mililiters: Double, completion: ((Double) -> Void)? = nil) {
     
     // schedule a new notification if allowed
     NotificationManager.shared.prepareNextNotifications()
+    
+    // add the taken drink to the healthkit store
+    HealthKitManager.shared.addDrinkToHealthkit(ml: mililiters, date: time)
     
     if(completion != nil) {
         completion!(percentageGoal)

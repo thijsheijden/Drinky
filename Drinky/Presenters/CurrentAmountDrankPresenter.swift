@@ -45,7 +45,7 @@ class CurrentAmountDrankPresenter: PresenterProtocol {
     // method which gets called when a glass is tapped, adds a drink to the storage
     func addDrinkToData(ml: Int) {
         addDrink(mililiters: Double(ml)) { percentageGoal -> Void in
-            self.fillDrinkView(to: percentageGoal)
+            self.fillDrinkView(to: percentageGoal) 
         }
     }
     

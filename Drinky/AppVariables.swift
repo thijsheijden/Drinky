@@ -61,3 +61,13 @@ extension AppVariables {
         }
     }
 }
+
+// MARK: The enum for HealthKit status
+extension AppVariables {
+    enum healthKitStat {
+        case notAvailable
+        case notAuthorized
+        case dataTypeNotAvailable
+        case authorized
+    }
+}

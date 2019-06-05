@@ -15,9 +15,8 @@ protocol NotificationSettingsViewControllerProtocol {
 class NotificationSettingsViewController: UIViewController, NotificationSettingsViewControllerProtocol {
     
     var presenter: NotificationSettingsPresenter!
+    var rangeSlider: NotificationRangeSlider!
 
-    @IBOutlet weak var fromTimePickerView: UIDatePicker!
-    @IBOutlet weak var toTimePickerView: UIDatePicker!
     @IBOutlet weak var notificationsSwitch: UISwitch!
     
     override func viewDidLoad() {
@@ -39,19 +38,15 @@ class NotificationSettingsViewController: UIViewController, NotificationSettings
         } else {
             notificationsSwitch.isOn = false
         }
-    }
-
-    // MARK: Value changed for both of the picker views
-    @IBAction func fromTimeChanged(_ sender: Any) {
-        let picker = sender as! UIDatePicker
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        print(formatter.string(from: picker.date))
+        
+        setupRangeSlider()
     }
     
-    @IBAction func toTimeChanged(_ sender: Any) {
-        let picker = sender as! UIDatePicker
-        let time = picker.date.format(format: "hh-mm-ss")
+    // setting up the range slider
+    func setupRangeSlider() {
+        rangeSlider = NotificationRangeSlider(frame: CGRect(x: view.frame.minX + 25, y: view.center.y, width: view.frame.width - 50, height: 250))
+        rangeSlider.backgroundColor = .clear
+        self.view.addSubview(rangeSlider)
     }
     
     @IBAction func notificationsToggled(_ sender: Any) {
@@ -64,9 +59,4 @@ class NotificationSettingsViewController: UIViewController, NotificationSettings
             }
         })
     }
-}
-
-// MARK: All the time picker code
-extension NotificationSettingsViewController {
-    
 }
