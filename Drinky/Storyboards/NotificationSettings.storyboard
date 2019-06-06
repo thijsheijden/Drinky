@@ -34,17 +34,54 @@
                                     </switch>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fHn-ye-iW5" customClass="RangeSlider" customModule="Drinky" customModuleProvider="target">
+                                <rect key="frame" x="25" y="438" width="364" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Jbb-AL-fit"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lowerValue">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="upperValue">
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Receive notifications from 7:00 to 22:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCu-6W-47X">
+                                <rect key="frame" x="5" y="493" width="404" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bMc-3V-hO0" firstAttribute="leading" secondItem="xjh-62-XIm" secondAttribute="leading" constant="15" id="0X8-KQ-XPi"/>
+                            <constraint firstItem="xjh-62-XIm" firstAttribute="trailing" secondItem="fHn-ye-iW5" secondAttribute="trailing" constant="25" id="9go-Gz-po7"/>
+                            <constraint firstItem="fHn-ye-iW5" firstAttribute="leading" secondItem="xjh-62-XIm" secondAttribute="leading" constant="25" id="BUD-Ho-L86"/>
                             <constraint firstItem="xjh-62-XIm" firstAttribute="trailing" secondItem="bMc-3V-hO0" secondAttribute="trailing" constant="15" id="ErQ-lf-p1s"/>
                             <constraint firstItem="bMc-3V-hO0" firstAttribute="top" secondItem="xjh-62-XIm" secondAttribute="top" constant="25" id="Mzp-9g-7ij"/>
+                            <constraint firstItem="DCu-6W-47X" firstAttribute="centerX" secondItem="xjh-62-XIm" secondAttribute="centerX" id="RG8-9n-FNU"/>
+                            <constraint firstItem="DCu-6W-47X" firstAttribute="leading" secondItem="xjh-62-XIm" secondAttribute="leading" constant="5" id="SQZ-Ms-PQi"/>
+                            <constraint firstItem="fHn-ye-iW5" firstAttribute="centerX" secondItem="xjh-62-XIm" secondAttribute="centerX" id="SW0-38-ZFw"/>
+                            <constraint firstItem="fHn-ye-iW5" firstAttribute="centerY" secondItem="xjh-62-XIm" secondAttribute="centerY" id="U5e-bf-h6E"/>
+                            <constraint firstItem="DCu-6W-47X" firstAttribute="top" secondItem="fHn-ye-iW5" secondAttribute="bottom" constant="25" id="fxP-bJ-2RF"/>
+                            <constraint firstItem="xjh-62-XIm" firstAttribute="trailing" secondItem="DCu-6W-47X" secondAttribute="trailing" constant="5" id="oWg-qM-Gl7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xjh-62-XIm"/>
                     </view>
                     <connections>
+                        <outlet property="notificationTimeRangeLabel" destination="DCu-6W-47X" id="2UE-XX-4J9"/>
                         <outlet property="notificationsSwitch" destination="fbT-Zh-As2" id="Mvz-4B-hy7"/>
+                        <outlet property="rangeSlider" destination="fHn-ye-iW5" id="2Og-Ia-DNQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mtN-oO-k2H" userLabel="First Responder" sceneMemberID="firstResponder"/>

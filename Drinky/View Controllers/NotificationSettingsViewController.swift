@@ -15,9 +15,10 @@ protocol NotificationSettingsViewControllerProtocol {
 class NotificationSettingsViewController: UIViewController, NotificationSettingsViewControllerProtocol {
     
     var presenter: NotificationSettingsPresenter!
-    var rangeSlider: NotificationRangeSlider!
 
     @IBOutlet weak var notificationsSwitch: UISwitch!
+    @IBOutlet weak var rangeSlider: RangeSlider!
+    @IBOutlet weak var notificationTimeRangeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +40,7 @@ class NotificationSettingsViewController: UIViewController, NotificationSettings
             notificationsSwitch.isOn = false
         }
         
-        setupRangeSlider()
-    }
-    
-    // setting up the range slider
-    func setupRangeSlider() {
-        rangeSlider = NotificationRangeSlider(frame: CGRect(x: view.frame.minX + 25, y: view.center.y, width: view.frame.width - 50, height: 250))
-        rangeSlider.backgroundColor = .clear
-        self.view.addSubview(rangeSlider)
+        rangeSlider.addTarget(self, action: #selector(rangeSliderValueChanged(_:)), for: .valueChanged)
     }
     
     @IBAction func notificationsToggled(_ sender: Any) {
@@ -58,5 +52,11 @@ class NotificationSettingsViewController: UIViewController, NotificationSettings
                 NotificationManager.shared.askPermission()
             }
         })
+    }
+    
+    @objc func rangeSliderValueChanged(_ rangeSlider: RangeSlider) {
+        notificationTimeRangeLabel.text = "Receive notifications from \((Int)(rangeSlider.lowerValue)):00 to \((Int)(rangeSlider.upperValue)):00"
+        AppVariables.startTime = (Int)(rangeSlider.lowerValue)
+        AppVariables.endTime = (Int)(rangeSlider.upperValue)
     }
 }

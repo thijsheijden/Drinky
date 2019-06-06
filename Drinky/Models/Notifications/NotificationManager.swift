@@ -81,9 +81,13 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
             content.categoryIdentifier = "takeDrinkNotificationCategory"
             
             // Schedule the notification in the next interval
-            dateComponents.second = Calendar.current.component(.second, from: Date()) + 5
-            //        dateComponents.hour += AppVariables.notificationIntervalHours
-            //        dateComponents.minute += AppVariables.notificationIntervalMinutes
+            if checkIfNextNotificationFits() {
+                dateComponents.hour = Calendar.current.component(.hour, from: Date()) + 1
+                dateComponents.minute = Calendar.current.component(.minute, from: Date())
+            } else {
+                dateComponents.day = Calendar.current.component(.day, from: Date()) + 1
+                dateComponents.hour = AppVariables.startTime
+            }
             
             // Create the trigger
             let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)

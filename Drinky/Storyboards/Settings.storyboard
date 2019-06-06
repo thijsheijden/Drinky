@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Weight Settings-->
+        <!--User Settings-->
         <scene sceneID="AZF-mV-zuk">
             <objects>
-                <viewController title="Weight Settings" id="bDE-ux-n63" customClass="SettingsViewController" customModule="Drinky" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="User Settings" id="bDE-ux-n63" customClass="SettingsViewController" customModule="Drinky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8d1-8G-rcx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
