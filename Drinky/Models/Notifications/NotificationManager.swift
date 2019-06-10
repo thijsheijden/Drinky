@@ -29,11 +29,11 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
                                                 options: UNNotificationActionOptions(rawValue: 0))
         
         let drinkMediumGlassAction = UNNotificationAction(identifier: "drinkMediumGlassNotificationAction",
-                                                 title: "Drink Medium Glass (200mL)",
+                                                 title: "Drink Normal Glass (250mL)",
                                                  options: UNNotificationActionOptions(rawValue: 0))
         
         let drinkLargeGlassAction = UNNotificationAction(identifier: "drinkLargeGlassNotificationAction",
-                                                          title: "Drink Large Glass (300mL)",
+                                                          title: "Drink Large Glass (350mL)",
                                                           options: UNNotificationActionOptions(rawValue: 0))
         
         // Define the notification type
@@ -70,6 +70,8 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     func prepareNextNotifications() {
         if AppVariables.notifications {
             print("Preparing notification")
+            
+            removeAllPendingNotifications()
             
             var dateComponents = DateComponents()
             dateComponents.calendar = Calendar.current
@@ -124,14 +126,21 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         return false
     }
     
+    // check wether there are scheduled notifications
+    func checkWetherThereAreNoScheduledNotifications(completion: @escaping (Bool) -> Void) {
+        notificationCenter.getPendingNotificationRequests(completionHandler: { requests in
+            completion(requests.isEmpty)
+        })
+    }
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         switch response.actionIdentifier {
         case "drinkSmallGlassNotificationAction":
             addDrink(mililiters: 150)
         case "drinkMediumGlassNotificationAction":
-            addDrink(mililiters: 200)
+            addDrink(mililiters: 250)
         case "drinkLargeGlassNotificationAction":
-            addDrink(mililiters: 300)
+            addDrink(mililiters: 350)
         default:
             addDrink(mililiters: 1000)
         }

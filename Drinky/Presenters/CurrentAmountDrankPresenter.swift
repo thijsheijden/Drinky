@@ -29,6 +29,13 @@ class CurrentAmountDrankPresenter: PresenterProtocol {
         
         // setup an observer for when the application goes to the foreground so we know when to update the views
         NotificationCenter.default.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.didBecomeActiveNotification, object: nil)
+        
+        // setting initial userdefaults values if this is the initial launch
+        if !UserDefaults.standard.bool(forKey: "launchedBefore") {
+            print("initial launch")
+            UserDefaults.standard.register(defaults: AppVariables.userDefaultsDefaultValues)
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+        }
     }
     
     // method which gets triggered when the applicatione enters the foreground, we need to update the ui then

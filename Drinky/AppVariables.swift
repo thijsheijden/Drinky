@@ -19,6 +19,14 @@ class AppVariables {
 
 // MARK: All the UserDefaults data
 extension AppVariables {
+    
+    static let userDefaultsDefaultValues = [
+        "notificationsStartTime" : 7,
+        "notificationsEndTime" : 22,
+        "notificationsIntervalHours" : 1,
+        "notificationsIntervalMinutes" : 0
+    ]
+    
     static var notifications: Bool {
         get {
             return UserDefaults.standard.bool(forKey: "notificationsToggled")

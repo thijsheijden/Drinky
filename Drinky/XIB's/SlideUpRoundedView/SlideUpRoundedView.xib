@@ -18,25 +18,25 @@
                 <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2mc-Di-xTu">
                     <rect key="frame" x="5" y="40" width="404" height="100"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o47-q2-NJv">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWh-VG-SzX">
                             <rect key="frame" x="0.0" y="0.0" width="129.5" height="100"/>
-                            <state key="normal" image="glassWater"/>
+                            <state key="normal" image="largeGlass"/>
                             <connections>
-                                <action selector="smallGlassTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="2C7-ob-EiF"/>
+                                <action selector="bigGlassTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="IB0-vF-KTJ"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8L-wn-JCa">
                             <rect key="frame" x="137.5" y="0.0" width="129" height="100"/>
-                            <state key="normal" image="glassWater"/>
+                            <state key="normal" image="mediumGlass"/>
                             <connections>
                                 <action selector="mediumGlassTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZM6-az-pRG"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWh-VG-SzX">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o47-q2-NJv">
                             <rect key="frame" x="274.5" y="0.0" width="129.5" height="100"/>
-                            <state key="normal" image="glassWater"/>
+                            <state key="normal" image="smallGlass"/>
                             <connections>
-                                <action selector="bigGlassTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="IB0-vF-KTJ"/>
+                                <action selector="smallGlassTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="2C7-ob-EiF"/>
                             </connections>
                         </button>
                     </subviews>
@@ -101,6 +101,8 @@
     </objects>
     <resources>
         <image name="closeButton" width="512" height="512"/>
-        <image name="glassWater" width="300" height="300"/>
+        <image name="largeGlass" width="300" height="300"/>
+        <image name="mediumGlass" width="300" height="300"/>
+        <image name="smallGlass" width="300" height="300"/>
     </resources>
 </document>

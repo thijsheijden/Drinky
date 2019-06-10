@@ -41,6 +41,15 @@ class NotificationSettingsViewController: UIViewController, NotificationSettings
         }
         
         rangeSlider.addTarget(self, action: #selector(rangeSliderValueChanged(_:)), for: .valueChanged)
+        setRangeSliderValues()
+    }
+    
+    // setting the correct lower and upper values for the rangeslider
+    func setRangeSliderValues() {
+        print(AppVariables.startTime)
+        rangeSlider.lowerValue = (Double)(AppVariables.startTime)
+        rangeSlider.upperValue = (Double)(AppVariables.endTime)
+        notificationTimeRangeLabel.text = "Receive notifications from \((Int)(rangeSlider.lowerValue)):00 to \((Int)(rangeSlider.upperValue)):00"
     }
     
     @IBAction func notificationsToggled(_ sender: Any) {

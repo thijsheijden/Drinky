@@ -128,9 +128,6 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
     // MARK: All Actions
     @IBAction func drinkButtonPressed(_ sender: Any) {
         
-        AppVariables.startTime = 7
-        AppVariables.endTime = 21
-        
         if slideUpView != nil {
             removeSlideUpView()
         } else {
