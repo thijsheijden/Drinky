@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UIApplication.shared.setMinimumBackgroundFetchInterval(900)
         return true
     }
 
@@ -42,6 +43,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    // background fetch, check wether there is a scheduled notification, and if not, schedule one for the next hour
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        NotificationManager.shared.checkWetherThereAreNoScheduledNotifications(completion: { (noScheduledNotifications) in
+            if noScheduledNotifications {
+                NotificationManager.shared.prepareNextNotifications()
+            }
+        })
     }
 
     // MARK: - Core Data stack
