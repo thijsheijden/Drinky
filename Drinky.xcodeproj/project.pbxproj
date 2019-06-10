@@ -35,9 +35,17 @@
 		7679049E22A03ACD005C8520 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461B9226DC557001C254A /* DateExtension.swift */; };
 		7679049F22A03AF0005C8520 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA9B226F802A004A957C /* CoreDataManager.swift */; };
 		767904A022A03AF7005C8520 /* NSCustomPersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655E36522A03639000DCFD2 /* NSCustomPersistentContainer.swift */; };
+		76931A7122AE876600F2C9A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76F3C46D226A27B300E25C34 /* Assets.xcassets */; };
+		76931A7222AE8A9100F2C9A7 /* addDrink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA95226F5086004A957C /* addDrink.swift */; };
+		76931A7322AE8ADC00F2C9A7 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7655E33E22A008A0000DCFD2 /* NotificationManager.swift */; };
+		76931A7422AE8AE400F2C9A7 /* AppVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461B6226DC386001C254A /* AppVariables.swift */; };
+		76931A7622AE8B0200F2C9A7 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E51FCC22A829050060DD0A /* HealthKitManager.swift */; };
+		76931A7722AE8B0E00F2C9A7 /* calculatePercentageOfGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C1DA99226F6989004A957C /* calculatePercentageOfGoal.swift */; };
 		769461B7226DC386001C254A /* AppVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461B6226DC386001C254A /* AppVariables.swift */; };
 		769461BA226DC557001C254A /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461B9226DC557001C254A /* DateExtension.swift */; };
 		769461BC226DC73B001C254A /* retrieveDayEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769461BB226DC73B001C254A /* retrieveDayEntity.swift */; };
+		76A58FDB22AE982A00DE105D /* SharedUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A58FDA22AE982A00DE105D /* SharedUserDefaults.swift */; };
+		76A58FDC22AE991400DE105D /* SharedUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A58FDA22AE982A00DE105D /* SharedUserDefaults.swift */; };
 		76B20CE6226B27D500AC406A /* SlideUpRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B20CE5226B27D500AC406A /* SlideUpRoundedView.swift */; };
 		76B20CE8226B281900AC406A /* SlideUpRoundedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76B20CE7226B281900AC406A /* SlideUpRoundedView.xib */; };
 		76B20CEA226B285500AC406A /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B20CE9226B285500AC406A /* RoundedShadowView.swift */; };
@@ -181,6 +189,7 @@
 		769461B6226DC386001C254A /* AppVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVariables.swift; sourceTree = "<group>"; };
 		769461B9226DC557001C254A /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		769461BB226DC73B001C254A /* retrieveDayEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = retrieveDayEntity.swift; sourceTree = "<group>"; };
+		76A58FDA22AE982A00DE105D /* SharedUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUserDefaults.swift; sourceTree = "<group>"; };
 		76B20CE5226B27D500AC406A /* SlideUpRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideUpRoundedView.swift; sourceTree = "<group>"; };
 		76B20CE7226B281900AC406A /* SlideUpRoundedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideUpRoundedView.xib; sourceTree = "<group>"; };
 		76B20CE9226B285500AC406A /* RoundedShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedShadowView.swift; sourceTree = "<group>"; };
@@ -360,6 +369,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		76A58FD922AE981A00DE105D /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				76A58FDA22AE982A00DE105D /* SharedUserDefaults.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		76BB3B7B228B07AB00A05934 /* Drinking Progress */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +503,7 @@
 		76F3C496226A280700E25C34 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				76A58FD922AE981A00DE105D /* UserDefaults */,
 				76E51FCB22A828F80060DD0A /* HealthKit */,
 				7655E33D22A0088C000DCFD2 /* Notifications */,
 				76BB3B7F228B0EC300A05934 /* Settings */,
@@ -748,6 +766,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76931A7122AE876600F2C9A7 /* Assets.xcassets in Resources */,
 				7655E34C22A009B2000DCFD2 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -890,12 +909,18 @@
 			files = (
 				767904A022A03AF7005C8520 /* NSCustomPersistentContainer.swift in Sources */,
 				7679049F22A03AF0005C8520 /* CoreDataManager.swift in Sources */,
+				76931A7622AE8B0200F2C9A7 /* HealthKitManager.swift in Sources */,
+				76931A7322AE8ADC00F2C9A7 /* NotificationManager.swift in Sources */,
 				7655E36222A03435000DCFD2 /* Drinky.xcdatamodeld in Sources */,
 				7679049E22A03ACD005C8520 /* DateExtension.swift in Sources */,
 				76085FDB22A133130084B8E1 /* RoundedShadowView.swift in Sources */,
 				7655E36822A03A37000DCFD2 /* ActivityArcView.swift in Sources */,
+				76931A7422AE8AE400F2C9A7 /* AppVariables.swift in Sources */,
 				7655E36122A0340E000DCFD2 /* TodayViewController.swift in Sources */,
+				76931A7722AE8B0E00F2C9A7 /* calculatePercentageOfGoal.swift in Sources */,
 				7679049D22A03ACA005C8520 /* retrieveDayEntity.swift in Sources */,
+				76931A7222AE8A9100F2C9A7 /* addDrink.swift in Sources */,
+				76A58FDC22AE991400DE105D /* SharedUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -922,6 +947,7 @@
 				76F3C464226A27B200E25C34 /* AppDelegate.swift in Sources */,
 				76E51FCD22A829050060DD0A /* HealthKitManager.swift in Sources */,
 				76C1DA93226F4E4A004A957C /* PresenterProtocol.swift in Sources */,
+				76A58FDB22AE982A00DE105D /* SharedUserDefaults.swift in Sources */,
 				76085FE022A147B50084B8E1 /* NotificationSettingsViewController.swift in Sources */,
 				7655E36622A03639000DCFD2 /* NSCustomPersistentContainer.swift in Sources */,
 				76F3C498226A283500E25C34 /* CurrentAmountDrankPresenter.swift in Sources */,

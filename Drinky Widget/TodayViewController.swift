@@ -12,17 +12,12 @@ import NotificationCenter
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet weak var activityView: ActivityArcView!
-    @IBOutlet weak var amountDrankLabel: UILabel!
+    @IBOutlet weak var percentageGoalLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // setting all the ui element values
-        let today = retrieveDayEntity()
-        activityView.endArc = CGFloat(today?.percentageGoal ?? 0.0) / 100.0
-        amountDrankLabel.text = String(today?.drinkTaken?.count ?? 0)
-        
-        
+        updateUI()
     }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -35,4 +30,32 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.newData)
     }
     
+    func updateUI() {
+        // setting all the ui element values
+        let today = retrieveDayEntity()
+        if CGFloat(today?.percentageGoal ?? 0.0) / 100.0 > 1.0 {
+            activityView.endArc = 1.0
+        } else {
+            activityView.endArc = CGFloat(today?.percentageGoal ?? 0.0) / 100.0
+        }
+        percentageGoalLabel.text = String(format: "%.1f", today?.percentageGoal ?? 0.0) + "%"
+    }
+    
+    @IBAction func largeGlassPressed(_ sender: Any) {
+        addDrink(mililiters: 350)
+        print("large")
+        updateUI()
+    }
+    
+    @IBAction func mediumGlassPressed(_ sender: Any) {
+        addDrink(mililiters: 250)
+        print("medium")
+        updateUI()
+    }
+    
+    @IBAction func smallGlassPressed(_ sender: Any) {
+        addDrink(mililiters: 150)
+        print("small")
+        updateUI()
+    }
 }

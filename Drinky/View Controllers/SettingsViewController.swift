@@ -51,8 +51,8 @@ class SettingsViewController: UIViewController, SettingsViewControllerProtocol {
         excersizePicker.dataSource = self
         excersizePicker.delegate = self
         
-        weightPicker.selectRow(UserDefaults.standard.integer(forKey: "userWeight"), inComponent: 0, animated: true)
-        excersizePicker.selectRow((UserDefaults.standard.integer(forKey: "excersizeMinutesDaily")/5), inComponent: 0, animated: true)
+        weightPicker.selectRow(SharedUserDefaults.shared.userDefaults!.integer(forKey: "userWeight"), inComponent: 0, animated: true)
+        excersizePicker.selectRow((SharedUserDefaults.shared.userDefaults!.integer(forKey: "excersizeMinutesDaily")/5), inComponent: 0, animated: true)
     }
     
     func updateRecommendedAmountOfWaterLabelText(text: String) {

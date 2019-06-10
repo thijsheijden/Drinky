@@ -38,10 +38,6 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
 
         presenter = CurrentAmountDrankPresenter(view: self)
         presenter.viewDidLoad()
-        
-        if UserDefaults.standard.integer(forKey: "userWeight") == 0 {
-            addInitialUserDefaultsValues()
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,14 +48,6 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
     
     override func viewDidAppear(_ animated: Bool) {
         amountDrankView.startTiltAnimation()
-    }
-    
-    // MARK: Remove when initial onboarding has been added
-    func addInitialUserDefaultsValues() {
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(65, forKey: "userWeight")
-        userDefaults.set(30, forKey: "excersizeMinutesDaily")
-        userDefaults.set(3000, forKey: "recommendedAmount")
     }
     
     // method which creates the CMMotionManager and posts notifications

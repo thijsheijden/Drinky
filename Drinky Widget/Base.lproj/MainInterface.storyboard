@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,25 +19,71 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39W-I2-L6M" customClass="ActivityArcView" customModule="Drinky_Widget" customModuleProvider="target">
                                 <rect key="frame" x="5" y="5" width="100" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zia-EO-eRZ">
+                                        <rect key="frame" x="32.5" y="40" width="35" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="zia-EO-eRZ" firstAttribute="centerY" secondItem="39W-I2-L6M" secondAttribute="centerY" id="ZHS-aZ-kjs"/>
                                     <constraint firstAttribute="width" constant="100" id="aNW-iH-8zA"/>
+                                    <constraint firstItem="zia-EO-eRZ" firstAttribute="centerX" secondItem="39W-I2-L6M" secondAttribute="centerX" id="jvf-EN-Iw7"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8B-XM-aRl">
-                                <rect key="frame" x="110" y="5" width="205" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4Oa-TE-Ccv">
+                                <rect key="frame" x="120" y="5" width="195" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Fk-Qk-KR8">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="100"/>
+                                        <state key="normal" image="largeGlass"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="self.imageView.contentMode">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="largeGlassPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="FoN-SQ-Ge6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvP-CF-aIo">
+                                        <rect key="frame" x="65" y="0.0" width="65" height="100"/>
+                                        <state key="normal" image="mediumGlass"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="self.imageView.contentMode">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="mediumGlassPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="iLm-uK-w7v"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EX8-Vz-Dqd">
+                                        <rect key="frame" x="130" y="0.0" width="65" height="100"/>
+                                        <state key="normal" image="smallGlass"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="self.imageView.contentMode">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="smallGlassPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="ujm-J8-Dv9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="k8B-XM-aRl" secondAttribute="trailing" constant="5" id="EW4-T5-1yP"/>
-                            <constraint firstItem="k8B-XM-aRl" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="5" id="P9p-dI-Krd"/>
-                            <constraint firstItem="k8B-XM-aRl" firstAttribute="leading" secondItem="39W-I2-L6M" secondAttribute="trailing" constant="5" id="fHf-xD-t7B"/>
+                            <constraint firstAttribute="trailing" secondItem="4Oa-TE-Ccv" secondAttribute="trailing" constant="5" id="Nry-kk-ipp"/>
+                            <constraint firstAttribute="bottom" secondItem="4Oa-TE-Ccv" secondAttribute="bottom" constant="5" id="OrK-Gb-7hU"/>
+                            <constraint firstItem="4Oa-TE-Ccv" firstAttribute="leading" secondItem="39W-I2-L6M" secondAttribute="trailing" constant="15" id="UDw-mu-kQE"/>
                             <constraint firstItem="39W-I2-L6M" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="5" id="gsF-U4-hTx"/>
                             <constraint firstItem="39W-I2-L6M" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="5" id="juh-NB-hsH"/>
                             <constraint firstAttribute="bottom" secondItem="39W-I2-L6M" secondAttribute="bottom" constant="5" id="wZu-yz-urF"/>
+                            <constraint firstItem="4Oa-TE-Ccv" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="5" id="z33-zV-mUO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>
@@ -47,11 +92,16 @@
                     <size key="freeformSize" width="320" height="110"/>
                     <connections>
                         <outlet property="activityView" destination="39W-I2-L6M" id="N35-9z-YWf"/>
-                        <outlet property="amountDrankLabel" destination="k8B-XM-aRl" id="uFr-jI-O3t"/>
+                        <outlet property="percentageGoalLabel" destination="zia-EO-eRZ" id="q2O-Pg-hdO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="largeGlass" width="300" height="300"/>
+        <image name="mediumGlass" width="300" height="300"/>
+        <image name="smallGlass" width="300" height="300"/>
+    </resources>
 </document>

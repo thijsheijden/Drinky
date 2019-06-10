@@ -16,7 +16,7 @@ class ActivityArcView: UIView {
         }
     }
     
-    var arcWidth:CGFloat = 15.0
+    var arcWidth:CGFloat = 18.0
     var arcColor = UIColor(hue: 0.5389, saturation: 1, brightness: 1, alpha: 1.0)
     var arcBackgroundColor = UIColor.black
     

@@ -23,7 +23,7 @@ class SettingsPresenter: PresenterProtocol {
     }
     
     func updateRecommendedWaterIntakeLabel() {
-        view.updateRecommendedAmountOfWaterLabelText(text: String(UserDefaults.standard.integer(forKey: "recommendedAmount")))
+        view.updateRecommendedAmountOfWaterLabelText(text: String(SharedUserDefaults.shared.userDefaults!.integer(forKey: "recommendedAmount")))
         
     }
 }

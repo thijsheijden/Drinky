@@ -23,7 +23,7 @@ func addDrink(mililiters: Double, completion: ((Double) -> Void)? = nil) {
     // get the current day entity
     let day = retrieveDayEntity()
     
-    let percentageGoal = calculatePercentageOfGoal(mililiters: mililiters, mlInDb: day?.mlDrank ?? 0.0)
+    let percentageGoal = calculatePercentageOfGoal(mililiters: mililiters)
     
     print("Added drink percentage of goal: \(percentageGoal)")
     

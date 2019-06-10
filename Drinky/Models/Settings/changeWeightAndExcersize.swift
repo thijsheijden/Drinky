@@ -9,8 +9,8 @@
 import Foundation
 
 // this method changes the weight and height of the user, also updating the goal of the user
-func changeWeightAndExcersize(weight: Int = UserDefaults.standard.integer(forKey: "userWeight"), excersize: Int = UserDefaults.standard.integer(forKey: "excersizeMinutesDaily")) {
-    let userDefaults = UserDefaults.standard
+func changeWeightAndExcersize(weight: Int = SharedUserDefaults.shared.userDefaults!.integer(forKey: "userWeight"), excersize: Int = SharedUserDefaults.shared.userDefaults!.integer(forKey: "excersizeMinutesDaily")) {
+    let userDefaults = SharedUserDefaults.shared.userDefaults!
     
     // update user information
     userDefaults.set(weight, forKey: "userWeight")

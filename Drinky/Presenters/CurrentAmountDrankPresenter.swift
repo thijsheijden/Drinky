@@ -31,10 +31,10 @@ class CurrentAmountDrankPresenter: PresenterProtocol {
         NotificationCenter.default.addObserver(self, selector: #selector(appCameToForeground), name: UIApplication.didBecomeActiveNotification, object: nil)
         
         // setting initial userdefaults values if this is the initial launch
-        if !UserDefaults.standard.bool(forKey: "launchedBefore") {
+        if !SharedUserDefaults.shared.userDefaults!.bool(forKey: "launchedBefore") {
             print("initial launch")
-            UserDefaults.standard.register(defaults: AppVariables.userDefaultsDefaultValues)
-            UserDefaults.standard.set(true, forKey: "launchedBefore")
+            SharedUserDefaults.shared.userDefaults!.register(defaults: AppVariables.userDefaultsDefaultValues)
+            SharedUserDefaults.shared.userDefaults!.set(true, forKey: "launchedBefore")
         }
     }
     
@@ -71,7 +71,7 @@ class CurrentAmountDrankPresenter: PresenterProtocol {
     
     // method to retrieve the amount left to drink
     func getAmountLeftToDrink() -> String {
-        let amountLeftToDrink = max(Double(UserDefaults.standard.integer(forKey: "recommendedAmount")) - (retrieveDayEntity()?.mlDrank ?? 0.0), 0)
+        let amountLeftToDrink = max(Double(SharedUserDefaults.shared.userDefaults!.integer(forKey: "recommendedAmount")) - (retrieveDayEntity()?.mlDrank ?? 0.0), 0)
         return String(amountLeftToDrink)
     }
 }

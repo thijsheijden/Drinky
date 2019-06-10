@@ -10,7 +10,7 @@ import Foundation
 
 func calculateRecommendedAmount(weight: Int, excersize: Int) {
     
-    let userDefaults = UserDefaults.standard
+    let userDefaults = SharedUserDefaults.shared.userDefaults!
     
     var amountOfWater: Double = Double(weight) * 175/4
     

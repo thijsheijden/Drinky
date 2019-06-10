@@ -30,5 +30,4 @@ func checkIfDayEntity() {
     } catch {
         print("Failed")
     }
-    
 }

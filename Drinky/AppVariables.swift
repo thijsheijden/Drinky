@@ -10,11 +10,8 @@ import Foundation
 import UIKit
 
 class AppVariables {
-    
-    // the app's appdelegate
-    static let appDelegate = UIApplication.shared.delegate as? AppDelegate
-    
-    
+    // create a UserDefaults object which can be shared across target containers
+    static let sharedUserDefaults = SharedUserDefaults.shared.userDefaults
 }
 
 // MARK: All the UserDefaults data
@@ -24,48 +21,50 @@ extension AppVariables {
         "notificationsStartTime" : 7,
         "notificationsEndTime" : 22,
         "notificationsIntervalHours" : 1,
-        "notificationsIntervalMinutes" : 0
+        "notificationsIntervalMinutes" : 0,
+        "userWeight" : 65,
+        "excersizeMinutesDaily" : 15,
+        "recommendedAmount" : 2500
     ]
     
     static var notifications: Bool {
         get {
-            return UserDefaults.standard.bool(forKey: "notificationsToggled")
+            return sharedUserDefaults!.bool(forKey: "notificationsToggled")
         } set {
-            UserDefaults.standard.set(newValue, forKey: "notificationsToggled")
+            sharedUserDefaults!.set(newValue, forKey: "notificationsToggled")
         }
     }
     
     static var startTime: Int {
         get {
-            return UserDefaults.standard.integer(forKey: "notificationsStartTime")
+            return sharedUserDefaults!.integer(forKey: "notificationsStartTime")
         } set {
-            UserDefaults.standard.set(newValue, forKey: "notificationsStartTime")
+            sharedUserDefaults!.set(newValue, forKey: "notificationsStartTime")
         }
     }
     
     static var endTime: Int {
         get {
-            return UserDefaults.standard.integer(forKey: "notificationsEndTime")
+            return sharedUserDefaults!.integer(forKey: "notificationsEndTime")
         } set {
-            UserDefaults.standard.set(newValue, forKey: "notificationsEndTime")
+            sharedUserDefaults!.set(newValue, forKey: "notificationsEndTime")
         }
     }
     
     static var notificationIntervalHours: Int {
         get {
-            return UserDefaults.standard.integer(forKey: "notificationsIntervalHours")
+            return sharedUserDefaults!.integer(forKey: "notificationsIntervalHours")
         } set {
-            UserDefaults.standard.set(newValue, forKey: "notificationsIntervalHours")
+            sharedUserDefaults!.set(newValue, forKey: "notificationsIntervalHours")
             
         }
     }
     
     static var notificationIntervalMinutes: Int {
         get {
-            return UserDefaults.standard.integer(forKey: "notificationsIntervalMinutes")
+            return sharedUserDefaults!.integer(forKey: "notificationsIntervalMinutes")
         } set {
-            UserDefaults.standard.set(newValue, forKey: "notificationsIntervalMinutes")
-            
+            sharedUserDefaults!.set(newValue, forKey: "notificationsIntervalMinutes")
         }
     }
 }
