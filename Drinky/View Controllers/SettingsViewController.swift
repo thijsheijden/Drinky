@@ -25,12 +25,17 @@ class SettingsViewController: UIViewController, SettingsViewControllerProtocol {
     var presenter: SettingsPresenter!
     var weightArray = [Int]()
     var excersizeArray = [Int]()
+    private var appForegroundObserver: NSObjectProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         presenter = SettingsPresenter(view: self)
         presenter.viewDidLoad()
+        
+        appForegroundObserver = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [unowned self] notification in
+            // do whatever you want when the app is brought back to the foreground
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

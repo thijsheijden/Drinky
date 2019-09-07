@@ -26,4 +26,8 @@ class SettingsPresenter: PresenterProtocol {
         view.updateRecommendedAmountOfWaterLabelText(text: String(SharedUserDefaults.shared.userDefaults!.integer(forKey: "recommendedAmount")))
         
     }
+    
+    func willBecomeActive() {
+        
+    }
 }

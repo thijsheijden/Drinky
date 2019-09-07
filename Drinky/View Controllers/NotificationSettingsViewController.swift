@@ -15,6 +15,7 @@ protocol NotificationSettingsViewControllerProtocol {
 class NotificationSettingsViewController: UIViewController, NotificationSettingsViewControllerProtocol {
     
     var presenter: NotificationSettingsPresenter!
+    private var appForegroundObserver: NSObjectProtocol?
 
     @IBOutlet weak var notificationsSwitch: UISwitch!
     @IBOutlet weak var rangeSlider: RangeSlider!
@@ -26,6 +27,10 @@ class NotificationSettingsViewController: UIViewController, NotificationSettings
         // setup the presenter
         presenter = NotificationSettingsPresenter(view: self)
         presenter.viewDidLoad()
+        
+        appForegroundObserver = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [unowned self] notification in
+            // do whatever you want when the app is brought back to the foreground
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

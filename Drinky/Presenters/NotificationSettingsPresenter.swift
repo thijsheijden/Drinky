@@ -26,4 +26,8 @@ class NotificationSettingsPresenter: PresenterProtocol {
     func updateNotificationTimeRange() {
         
     }
+    
+    func willBecomeActive() {
+        
+    }
 }

@@ -34,6 +34,8 @@ final class CoreDataManager {
     
     func save() {
         let context = persistentContainer.viewContext
+        context.mergePolicy = NSMergePolicy(merge: NSMergePolicyType.mergeByPropertyObjectTrumpMergePolicyType)
+        
         if context.hasChanges {
             do {
                 try context.save()

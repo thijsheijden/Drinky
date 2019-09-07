@@ -27,6 +27,7 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
     var slideUpView: SlideUpRoundedView!
     var motionManager = CMMotionManager()
     var presenter: CurrentAmountDrankPresenter!
+    private var appForegroundObserver: NSObjectProtocol?
     
     // constants to keep track of the minimal y of the screen
     var screenMinY: CGFloat!
@@ -38,6 +39,10 @@ class CurrentAmountDrankViewController: UIViewController, CurrentAmountDrankView
 
         presenter = CurrentAmountDrankPresenter(view: self)
         presenter.viewDidLoad()
+        
+        appForegroundObserver = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { [unowned self] notification in
+            // do whatever you want when the app is brought back to the foreground
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

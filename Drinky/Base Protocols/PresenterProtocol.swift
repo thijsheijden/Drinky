@@ -15,4 +15,5 @@ protocol PresenterProtocol {
     
     init(view: viewControllerProtocol)
     func viewDidLoad()
+    func willBecomeActive()
 }

@@ -8,15 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6A596577B7CA3DD95825BB80 /* Pods_Drinky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 492137B3FC136F7466D360BB /* Pods_Drinky.framework */; };
-		76085FB622A12B610084B8E1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76085FB422A12B610084B8E1 /* Interface.storyboard */; };
-		76085FB822A12B620084B8E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76085FB722A12B620084B8E1 /* Assets.xcassets */; };
-		76085FBF22A12B630084B8E1 /* Drinky Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 76085FBE22A12B620084B8E1 /* Drinky Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		76085FC422A12B630084B8E1 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76085FC322A12B630084B8E1 /* InterfaceController.swift */; };
-		76085FC622A12B630084B8E1 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76085FC522A12B630084B8E1 /* ExtensionDelegate.swift */; };
-		76085FC822A12B630084B8E1 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76085FC722A12B630084B8E1 /* NotificationController.swift */; };
-		76085FCA22A12B630084B8E1 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76085FC922A12B630084B8E1 /* ComplicationController.swift */; };
-		76085FCC22A12B630084B8E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76085FCB22A12B630084B8E1 /* Assets.xcassets */; };
-		76085FD122A12B630084B8E1 /* Drinky Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 76085FB222A12B610084B8E1 /* Drinky Watch.app */; };
 		76085FDB22A133130084B8E1 /* RoundedShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B20CE9226B285500AC406A /* RoundedShadowView.swift */; };
 		76085FDE22A146D40084B8E1 /* NotificationSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76085FDD22A146D40084B8E1 /* NotificationSettings.storyboard */; };
 		76085FE022A147B50084B8E1 /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76085FDF22A147B50084B8E1 /* NotificationSettingsViewController.swift */; };
@@ -79,20 +70,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		76085FC022A12B630084B8E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 76F3C458226A27B200E25C34 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 76085FBD22A12B620084B8E1;
-			remoteInfo = "Drinky Watch Extension";
-		};
-		76085FCF22A12B630084B8E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 76F3C458226A27B200E25C34 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 76085FB122A12B610084B8E1;
-			remoteInfo = "Drinky Watch";
-		};
 		7655E34E22A009B2000DCFD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 76F3C458226A27B200E25C34 /* Project object */;
@@ -117,24 +94,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		76085FD722A12B630084B8E1 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				76085FBF22A12B630084B8E1 /* Drinky Watch Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		76085FD922A12B630084B8E1 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				76085FD122A12B630084B8E1 /* Drinky Watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,19 +124,6 @@
 		3FDCB15E84D6827365481ACA /* Pods_DrinkyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DrinkyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		492137B3FC136F7466D360BB /* Pods_Drinky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Drinky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F65162633A9E3D7C88B14C /* Pods-DrinkyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DrinkyUITests.debug.xcconfig"; path = "Target Support Files/Pods-DrinkyUITests/Pods-DrinkyUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		76085FB222A12B610084B8E1 /* Drinky Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Drinky Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		76085FB522A12B610084B8E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		76085FB722A12B620084B8E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		76085FB922A12B620084B8E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76085FBE22A12B620084B8E1 /* Drinky Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Drinky Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		76085FC322A12B630084B8E1 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		76085FC522A12B630084B8E1 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		76085FC722A12B630084B8E1 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		76085FC922A12B630084B8E1 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
-		76085FCB22A12B630084B8E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		76085FCD22A12B630084B8E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76085FCE22A12B630084B8E1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		76085FDA22A12B700084B8E1 /* Drinky Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Drinky Watch Extension.entitlements"; sourceTree = "<group>"; };
 		76085FDD22A146D40084B8E1 /* NotificationSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NotificationSettings.storyboard; sourceTree = "<group>"; };
 		76085FDF22A147B50084B8E1 /* NotificationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewController.swift; sourceTree = "<group>"; };
 		76085FE122A147D20084B8E1 /* NotificationSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsPresenter.swift; sourceTree = "<group>"; };
@@ -230,13 +182,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		76085FBB22A12B620084B8E1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7655E34122A009B1000DCFD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,31 +228,6 @@
 				7655E34522A009B2000DCFD2 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		76085FB322A12B610084B8E1 /* Drinky Watch */ = {
-			isa = PBXGroup;
-			children = (
-				76085FB422A12B610084B8E1 /* Interface.storyboard */,
-				76085FB722A12B620084B8E1 /* Assets.xcassets */,
-				76085FB922A12B620084B8E1 /* Info.plist */,
-			);
-			path = "Drinky Watch";
-			sourceTree = "<group>";
-		};
-		76085FC222A12B630084B8E1 /* Drinky Watch Extension */ = {
-			isa = PBXGroup;
-			children = (
-				76085FDA22A12B700084B8E1 /* Drinky Watch Extension.entitlements */,
-				76085FC322A12B630084B8E1 /* InterfaceController.swift */,
-				76085FC522A12B630084B8E1 /* ExtensionDelegate.swift */,
-				76085FC722A12B630084B8E1 /* NotificationController.swift */,
-				76085FC922A12B630084B8E1 /* ComplicationController.swift */,
-				76085FCB22A12B630084B8E1 /* Assets.xcassets */,
-				76085FCD22A12B630084B8E1 /* Info.plist */,
-				76085FCE22A12B630084B8E1 /* PushNotificationPayload.apns */,
-			);
-			path = "Drinky Watch Extension";
 			sourceTree = "<group>";
 		};
 		76085FE322A1562C0084B8E1 /* Controls */ = {
@@ -419,8 +339,6 @@
 				76F3C47A226A27B300E25C34 /* DrinkyTests */,
 				76F3C485226A27B300E25C34 /* DrinkyUITests */,
 				7655E34722A009B2000DCFD2 /* Drinky Widget */,
-				76085FB322A12B610084B8E1 /* Drinky Watch */,
-				76085FC222A12B630084B8E1 /* Drinky Watch Extension */,
 				76F3C461226A27B200E25C34 /* Products */,
 				A96EE9F7719D08E8E2796077 /* Pods */,
 				753B8071AAF274FC3CA3CD19 /* Frameworks */,
@@ -434,8 +352,6 @@
 				76F3C477226A27B300E25C34 /* DrinkyTests.xctest */,
 				76F3C482226A27B300E25C34 /* DrinkyUITests.xctest */,
 				7655E34422A009B1000DCFD2 /* Drinky Widget.appex */,
-				76085FB222A12B610084B8E1 /* Drinky Watch.app */,
-				76085FBE22A12B620084B8E1 /* Drinky Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -556,40 +472,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		76085FB122A12B610084B8E1 /* Drinky Watch */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 76085FD822A12B630084B8E1 /* Build configuration list for PBXNativeTarget "Drinky Watch" */;
-			buildPhases = (
-				76085FB022A12B610084B8E1 /* Resources */,
-				76085FD722A12B630084B8E1 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				76085FC122A12B630084B8E1 /* PBXTargetDependency */,
-			);
-			name = "Drinky Watch";
-			productName = "Drinky Watch";
-			productReference = 76085FB222A12B610084B8E1 /* Drinky Watch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		76085FBD22A12B620084B8E1 /* Drinky Watch Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 76085FD622A12B630084B8E1 /* Build configuration list for PBXNativeTarget "Drinky Watch Extension" */;
-			buildPhases = (
-				76085FBA22A12B620084B8E1 /* Sources */,
-				76085FBB22A12B620084B8E1 /* Frameworks */,
-				76085FBC22A12B620084B8E1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Drinky Watch Extension";
-			productName = "Drinky Watch Extension";
-			productReference = 76085FBE22A12B620084B8E1 /* Drinky Watch Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 		7655E34322A009B1000DCFD2 /* Drinky Widget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7655E35122A009B2000DCFD2 /* Build configuration list for PBXNativeTarget "Drinky Widget" */;
@@ -623,7 +505,6 @@
 			);
 			dependencies = (
 				7655E34F22A009B2000DCFD2 /* PBXTargetDependency */,
-				76085FD022A12B630084B8E1 /* PBXTargetDependency */,
 			);
 			name = Drinky;
 			productName = Drinky;
@@ -678,17 +559,6 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Thijs van der Heijden";
 				TargetAttributes = {
-					76085FB122A12B610084B8E1 = {
-						CreatedOnToolsVersion = 10.2.1;
-					};
-					76085FBD22A12B620084B8E1 = {
-						CreatedOnToolsVersion = 10.2.1;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
 					7655E34322A009B1000DCFD2 = {
 						CreatedOnToolsVersion = 10.2.1;
 						SystemCapabilities = {
@@ -738,30 +608,11 @@
 				76F3C476226A27B300E25C34 /* DrinkyTests */,
 				76F3C481226A27B300E25C34 /* DrinkyUITests */,
 				7655E34322A009B1000DCFD2 /* Drinky Widget */,
-				76085FB122A12B610084B8E1 /* Drinky Watch */,
-				76085FBD22A12B620084B8E1 /* Drinky Watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		76085FB022A12B610084B8E1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				76085FB822A12B620084B8E1 /* Assets.xcassets in Resources */,
-				76085FB622A12B610084B8E1 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		76085FBC22A12B620084B8E1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				76085FCC22A12B630084B8E1 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7655E34222A009B1000DCFD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -892,17 +743,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		76085FBA22A12B620084B8E1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				76085FC822A12B630084B8E1 /* NotificationController.swift in Sources */,
-				76085FCA22A12B630084B8E1 /* ComplicationController.swift in Sources */,
-				76085FC622A12B630084B8E1 /* ExtensionDelegate.swift in Sources */,
-				76085FC422A12B630084B8E1 /* InterfaceController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7655E34022A009B1000DCFD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -980,16 +820,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		76085FC122A12B630084B8E1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 76085FBD22A12B620084B8E1 /* Drinky Watch Extension */;
-			targetProxy = 76085FC022A12B630084B8E1 /* PBXContainerItemProxy */;
-		};
-		76085FD022A12B630084B8E1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 76085FB122A12B610084B8E1 /* Drinky Watch */;
-			targetProxy = 76085FCF22A12B630084B8E1 /* PBXContainerItemProxy */;
-		};
 		7655E34F22A009B2000DCFD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7655E34322A009B1000DCFD2 /* Drinky Widget */;
@@ -1008,14 +838,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		76085FB422A12B610084B8E1 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				76085FB522A12B610084B8E1 /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
 		7655E34A22A009B2000DCFD2 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1043,90 +865,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		76085FD222A12B630084B8E1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 25N3QHSSX3;
-				IBSC_MODULE = Drinky_Watch_Extension;
-				INFOPLIST_FILE = "Drinky Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = eu.thijsvanderheijden.Drinky.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
-			};
-			name = Debug;
-		};
-		76085FD322A12B630084B8E1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 25N3QHSSX3;
-				IBSC_MODULE = Drinky_Watch_Extension;
-				INFOPLIST_FILE = "Drinky Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = eu.thijsvanderheijden.Drinky.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
-			};
-			name = Release;
-		};
-		76085FD422A12B630084B8E1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "Drinky Watch Extension/Drinky Watch Extension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 25N3QHSSX3;
-				INFOPLIST_FILE = "Drinky Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = eu.thijsvanderheijden.Drinky.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
-			};
-			name = Debug;
-		};
-		76085FD522A12B630084B8E1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_ENTITLEMENTS = "Drinky Watch Extension/Drinky Watch Extension.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 25N3QHSSX3;
-				INFOPLIST_FILE = "Drinky Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = eu.thijsvanderheijden.Drinky.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.2;
-			};
-			name = Release;
-		};
 		7655E35222A009B2000DCFD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1418,24 +1156,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		76085FD622A12B630084B8E1 /* Build configuration list for PBXNativeTarget "Drinky Watch Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				76085FD422A12B630084B8E1 /* Debug */,
-				76085FD522A12B630084B8E1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		76085FD822A12B630084B8E1 /* Build configuration list for PBXNativeTarget "Drinky Watch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				76085FD222A12B630084B8E1 /* Debug */,
-				76085FD322A12B630084B8E1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		7655E35122A009B2000DCFD2 /* Build configuration list for PBXNativeTarget "Drinky Widget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

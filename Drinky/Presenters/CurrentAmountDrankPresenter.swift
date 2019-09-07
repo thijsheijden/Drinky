@@ -74,4 +74,8 @@ class CurrentAmountDrankPresenter: PresenterProtocol {
         let amountLeftToDrink = max(Double(SharedUserDefaults.shared.userDefaults!.integer(forKey: "recommendedAmount")) - (retrieveDayEntity()?.mlDrank ?? 0.0), 0)
         return String(amountLeftToDrink)
     }
+    
+    func willBecomeActive() {
+        
+    }
 }
